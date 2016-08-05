@@ -4,10 +4,13 @@
   "description": "a word cloud component using d3-cloud",
   "main": "lib/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint .",
     "build": "NODE_ENV=production npm run build:dev",
-    "build:dev": "babel src -d lib"
+    "build:dev": "babel src -d lib",
+    "test-only": "NODE_ENV=test mocha $npm_package_options_mocha",
+    "test:watch": "npm run test-only -- --watch",
+    "coverage": "nyc --check-coverage --lines 10 --functions 10 npm run test-only",
+    "test": "npm run lint && npm run coverage"
   },
   "repository": {
     "type": "git",
@@ -37,10 +40,24 @@
     "babel-preset-stage-0": "^6.5.0",
     "babel-register": "^6.11.6",
     "babel-runtime": "^6.11.6",
+    "chai": "^3.5.0",
+    "chai-enzyme": "^0.5.0",
+    "enzyme": "^2.4.1",
     "eslint": "2.13.1",
     "eslint-config-yoctol": "^0.6.2",
     "eslint-plugin-import": "^1.12.0",
     "eslint-plugin-jsx-a11y": "^2.0.1",
-    "eslint-plugin-react": "5.2.2"
+    "eslint-plugin-react": "5.2.2",
+    "mocha": "^3.0.1",
+    "nyc": "^7.1.0"
+  },
+  "nyc": {
+    "reporter": [
+      "lcov",
+      "text"
+    ]
+  },
+  "options": {
+    "mocha": "--compilers js:babel-register --recursive"
   }
 }
