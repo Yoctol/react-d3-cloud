@@ -1,0 +1,24 @@
+{
+  "name": "react-d3-cloud",
+  "version": "1.0.0",
+  "description": "a word cloud component using d3-cloud",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Yoctol/react-d3-cloud.git"
+  },
+  "keywords": [
+    "word-cloud",
+    "react",
+    "d3"
+  ],
+  "author": "cph",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Yoctol/react-d3-cloud/issues"
+  },
+  "homepage": "https://github.com/Yoctol/react-d3-cloud#readme"
+}
