@@ -4,7 +4,8 @@
   "description": "a word cloud component using d3-cloud",
   "main": "dist/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint ."
   },
   "repository": {
     "type": "git",
@@ -20,5 +21,24 @@
   "bugs": {
     "url": "https://github.com/Yoctol/react-d3-cloud/issues"
   },
-  "homepage": "https://github.com/Yoctol/react-d3-cloud#readme"
+  "homepage": "https://github.com/Yoctol/react-d3-cloud#readme",
+  "devDependencies": {
+    "babel-cli": "^6.11.4",
+    "babel-eslint": "^6.1.2",
+    "babel-loader": "^6.2.4",
+    "babel-plugin-dev-expression": "^0.2.1",
+    "babel-plugin-transform-remove-console": "^6.8.0",
+    "babel-plugin-transform-remove-debugger": "^6.8.0",
+    "babel-preset-es2015": "^6.13.1",
+    "babel-preset-react": "^6.11.1",
+    "babel-preset-react-optimize": "^1.0.1",
+    "babel-preset-stage-0": "^6.5.0",
+    "babel-register": "^6.11.6",
+    "babel-runtime": "^6.11.6",
+    "eslint": "2.13.1",
+    "eslint-config-yoctol": "^0.6.2",
+    "eslint-plugin-import": "^1.12.0",
+    "eslint-plugin-jsx-a11y": "^2.0.1",
+    "eslint-plugin-react": "5.2.2"
+  }
 }
