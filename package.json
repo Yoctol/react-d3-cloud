@@ -2,10 +2,12 @@
   "name": "react-d3-cloud",
   "version": "1.0.0",
   "description": "a word cloud component using d3-cloud",
-  "main": "dist/index.js",
+  "main": "lib/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "build": "NODE_ENV=production npm run build:dev",
+    "build:dev": "babel src -d lib"
   },
   "repository": {
     "type": "git",
