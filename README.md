@@ -6,7 +6,15 @@ A word cloud react component using d3-cloud
 npm run build
 ```
 
-## test
+## Test
+
+### pre-install
+```
+sudo apt-get install libcairo2-dev libjpeg8-dev libpango1.0-dev libgif-dev build-essential g++
+npm install
+```
+
+### Run test
 ```
 npm test
 ```
