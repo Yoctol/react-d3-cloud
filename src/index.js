@@ -3,6 +3,8 @@ import ReactFauxDom from 'react-faux-dom';
 import * as d3 from 'd3';
 import cloud from 'd3-cloud';
 
+const fill = d3.scaleOrdinal(d3.schemeCategory10);
+
 class WordCloud extends Component {
   render() {
     const { data } = this.props;
@@ -10,7 +12,6 @@ class WordCloud extends Component {
       key => ({ text: key, size: data[key], test: '123' })
     );
     const wordCloud = ReactFauxDom.createElement('div');
-    const fill = d3.scaleOrdinal(d3.schemeCategory10);
     const fontSizeMapper = (word) => {
       const max = 100;
       const min = 10;
