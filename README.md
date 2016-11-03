@@ -5,13 +5,15 @@ A word cloud react component using d3-cloud
 ```
 npm install react-d3-cloud
 ```
-```
+
+```jsx
 import WordCloud from 'react-d3-cloud'
 
 const data = {
   word1: 100,
   word2: 200,
 }
+
 <WordCloud data={data} />
 ```
 
