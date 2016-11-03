@@ -1,4 +1,9 @@
 # react-d3-cloud
+
+[![NPM version][npm-image]][npm-url]
+[![Build Status][travis-image]][travis-url]
+[![Dependency Status][david_img]][david_site]
+
 A word cloud react component using d3-cloud
 
 ## usage
@@ -34,3 +39,12 @@ npm install
 ```
 npm test
 ```
+
+[npm-image]: https://img.shields.io/npm/v/react-d3-cloud.svg?style=flat-square
+[npm-url]: https://npmjs.org/package/react-d3-cloud
+[travis-image]: https://travis-ci.org/Yoctol/react-d3-cloud.svg?branch=master
+[travis-url]: https://travis-ci.org/Yoctol/react-d3-cloud
+[david_img]: https://david-dm.org/Yoctol/react-d3-cloud.svg
+[david_site]: https://david-dm.org/Yoctol/react-d3-cloud
+
+
