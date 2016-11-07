@@ -1,4 +1,4 @@
-exports[`index.js should be a react component 1`] = `
+exports[`index.js should contain all words 1`] = `
 <div
   style={Object {}}>
   <svg
@@ -17,7 +17,7 @@ exports[`index.js should be a react component 1`] = `
           }
         }
         textAnchor="middle"
-        transform="translate(109,73)rotate(0)">
+        transform="translate(0,0)rotate(0)">
         word2
       </text>
       <text
@@ -29,7 +29,7 @@ exports[`index.js should be a react component 1`] = `
           }
         }
         textAnchor="middle"
-        transform="translate(-30,6)rotate(0)">
+        transform="translate(-13,16)rotate(0)">
         word1
       </text>
     </g>
