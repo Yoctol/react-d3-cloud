@@ -3,6 +3,6 @@
   "extends": "yoctol",
   "env": {
     "node": true,
-    "mocha": true
+    "jest": true
   }
 }
