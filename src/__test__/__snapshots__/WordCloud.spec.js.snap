@@ -1,0 +1,38 @@
+exports[`index.js should be a react component 1`] = `
+<div
+  style={Object {}}>
+  <svg
+    height={600}
+    style={Object {}}
+    width={700}>
+    <g
+      style={Object {}}
+      transform="translate(350,300)">
+      <text
+        style={
+          Object {
+            "fill": "#1f77b4",
+            "fontFamily": "Impact",
+            "fontSize": "100px",
+          }
+        }
+        textAnchor="middle"
+        transform="translate(109,73)rotate(0)">
+        word2
+      </text>
+      <text
+        style={
+          Object {
+            "fill": "#ff7f0e",
+            "fontFamily": "Impact",
+            "fontSize": "10px",
+          }
+        }
+        textAnchor="middle"
+        transform="translate(-30,6)rotate(0)">
+        word1
+      </text>
+    </g>
+  </svg>
+</div>
+`;
