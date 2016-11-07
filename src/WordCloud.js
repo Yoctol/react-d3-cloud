@@ -18,8 +18,8 @@ class WordCloud extends Component {
 
   render() {
     const { data, width, height, font } = this.props;
-    const wordCounts = Object.keys(data).map(
-      key => ({ text: key, value: data[key], test: '123' })
+    const wordCounts = data.map(
+      text => ({ ...text, test: '123' })
     );
     const defaultFontSizeMapper = (word) => {
       const max = 100;
@@ -64,7 +64,10 @@ class WordCloud extends Component {
 }
 
 WordCloud.propTypes = {
-  data: PropTypes.object.isRequired,
+  data: PropTypes.arrayOf(PropTypes.shape({
+    text: PropTypes.string.isRequired,
+    value: PropTypes.number.isRequired,
+  })).isRequired,
   width: PropTypes.number,
   height: PropTypes.number,
   font: PropTypes.string,

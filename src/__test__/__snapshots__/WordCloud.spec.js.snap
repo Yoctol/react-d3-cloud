@@ -18,19 +18,43 @@ exports[`index.js should contain all words 1`] = `
         }
         textAnchor="middle"
         transform="translate(0,0)rotate(0)">
-        word2
+        Hey
       </text>
       <text
         style={
           Object {
             "fill": "#ff7f0e",
             "fontFamily": "Impact",
+            "fontSize": "27px",
+          }
+        }
+        textAnchor="middle"
+        transform="translate(-7,32)rotate(0)">
+        lol
+      </text>
+      <text
+        style={
+          Object {
+            "fill": "#2ca02c",
+            "fontFamily": "Impact",
             "fontSize": "10px",
           }
         }
         textAnchor="middle"
-        transform="translate(-13,16)rotate(0)">
-        word1
+        transform="translate(-47,18)rotate(0)">
+        cool
+      </text>
+      <text
+        style={
+          Object {
+            "fill": "#d62728",
+            "fontFamily": "Impact",
+            "fontSize": "10px",
+          }
+        }
+        textAnchor="middle"
+        transform="translate(-19,48)rotate(0)">
+        duck
       </text>
     </g>
   </svg>
