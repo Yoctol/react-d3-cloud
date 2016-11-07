@@ -19,7 +19,7 @@ class WordCloud extends Component {
   render() {
     const { data, width, height, font } = this.props;
     const wordCounts = data.map(
-      text => ({ ...text, test: '123' })
+      text => ({ ...text })
     );
     const defaultFontSizeMapper = (word) => {
       const max = 100;
