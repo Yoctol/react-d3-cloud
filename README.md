@@ -14,10 +14,13 @@ npm install react-d3-cloud
 ```jsx
 import WordCloud from 'react-d3-cloud'
 
-const data = {
-  word1: 100,
-  word2: 200,
-}
+const data = [
+  { text: 'Hey', value: 1000 },
+  { text: 'lol', value: 200 },
+  { text: 'first impression', value: 800 },
+  { text: 'cool', value: 1 },
+  { text: 'duck', value: 10 },
+]
 
 <WordCloud data={data} />
 ```
