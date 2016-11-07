@@ -12,6 +12,10 @@ class WordCloud extends Component {
     font: 'serif',
   }
 
+  componentWillMount() {
+    this.wordCloud = ReactFauxDom.createElement('div');
+  }
+
   render() {
     const { data, width, height, font } = this.props;
     const wordCounts = Object.keys(data).map(
@@ -25,7 +29,6 @@ class WordCloud extends Component {
       const maxSize = Math.max(...wordCountSize);
       return min + (max - min) * (word.value - minSize) / (maxSize - minSize);
     };
-    const wordCloud = ReactFauxDom.createElement('div');
     const layout = cloud()
       .size([width, height])
       .font(font)
@@ -34,7 +37,7 @@ class WordCloud extends Component {
       .rotate(() => 0)
       .fontSize(defaultFontSizeMapper)
       .on('end', words => {
-        d3.select(wordCloud)
+        d3.select(this.wordCloud)
           .append('svg')
           .attr('width', layout.size()[0])
           .attr('height', layout.size()[1])
@@ -56,7 +59,7 @@ class WordCloud extends Component {
 
     layout.start();
 
-    return wordCloud.toReact();
+    return this.wordCloud.toReact();
   }
 }
 
