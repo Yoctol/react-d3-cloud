@@ -1,6 +1,6 @@
 {
   "name": "react-d3-cloud",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "a word cloud component using d3-cloud",
   "main": "lib/index.js",
   "scripts": {
@@ -57,7 +57,7 @@
   "dependencies": {
     "d3": "^4.2.1",
     "d3-cloud": "^1.2.1",
-    "react-faux-dom": "^2.7.1"
+    "react-faux-dom": "^3.0.0"
   },
   "peerDependencies": {
     "react": "^0.14.0 || ^15.0.0-0"
