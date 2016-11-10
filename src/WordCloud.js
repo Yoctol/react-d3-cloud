@@ -5,11 +5,14 @@ import cloud from 'd3-cloud';
 
 const fill = d3.scaleOrdinal(d3.schemeCategory10);
 
+const defaultFontSizeMapper = word => word.value;
+
 class WordCloud extends Component {
   static defaultProps = {
     width: 700,
     height: 600,
     font: 'serif',
+    fontSizeMapper: defaultFontSizeMapper,
   }
 
   componentWillMount() {
@@ -17,25 +20,18 @@ class WordCloud extends Component {
   }
 
   render() {
-    const { data, width, height, font } = this.props;
+    const { data, width, height, font, fontSizeMapper } = this.props;
     const wordCounts = data.map(
       text => ({ ...text })
     );
-    const defaultFontSizeMapper = (word) => {
-      const max = 100;
-      const min = 10;
-      const wordCountSize = wordCounts.map(w => w.value);
-      const minSize = Math.min(...wordCountSize);
-      const maxSize = Math.max(...wordCountSize);
-      return min + (max - min) * (word.value - minSize) / (maxSize - minSize);
-    };
+
     const layout = cloud()
       .size([width, height])
       .font(font)
       .words(wordCounts)
       .padding(5)
       .rotate(() => 0)
-      .fontSize(defaultFontSizeMapper)
+      .fontSize(fontSizeMapper)
       .on('end', words => {
         d3.select(this.wordCloud)
           .append('svg')
@@ -71,6 +67,7 @@ WordCloud.propTypes = {
   width: PropTypes.number,
   height: PropTypes.number,
   font: PropTypes.string,
+  fontSizeMapper: PropTypes.func,
 };
 
 export default WordCloud;
