@@ -1,6 +1,6 @@
 {
   "name": "react-d3-cloud",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "a word cloud component using d3-cloud",
   "main": "lib/index.js",
   "scripts": {
