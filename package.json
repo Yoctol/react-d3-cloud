@@ -7,10 +7,10 @@
     "lint": "eslint .",
     "build": "NODE_ENV=production npm run build:dev",
     "build:dev": "babel src -d lib",
-    "test-only": "NODE_ENV=test mocha $npm_package_options_mocha",
+    "test-only": "jest",
     "test:watch": "npm run test-only -- --watch",
     "coverage": "nyc --check-coverage --lines 10 --functions 10 npm run test-only",
-    "test": "npm run lint && jest"
+    "test": "npm run lint && npm run test-only"
   },
   "repository": {
     "type": "git",

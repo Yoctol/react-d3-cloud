@@ -13,48 +13,36 @@ exports[`index.js should contain all words 1`] = `
           Object {
             "fill": "#1f77b4",
             "fontFamily": "Impact",
-            "fontSize": "100px",
+            "fontSize": "200px",
           }
         }
         textAnchor="middle"
         transform="translate(0,0)rotate(0)">
-        Hey
+        lol
       </text>
       <text
         style={
           Object {
             "fill": "#ff7f0e",
             "fontFamily": "Impact",
-            "fontSize": "27px",
+            "fontSize": "10px",
           }
         }
         textAnchor="middle"
-        transform="translate(-7,32)rotate(0)">
-        lol
+        transform="translate(-9,18)rotate(0)">
+        duck
       </text>
       <text
         style={
           Object {
             "fill": "#2ca02c",
             "fontFamily": "Impact",
-            "fontSize": "10px",
+            "fontSize": "1px",
           }
         }
         textAnchor="middle"
-        transform="translate(-47,18)rotate(0)">
+        transform="translate(5,-16)rotate(0)">
         cool
-      </text>
-      <text
-        style={
-          Object {
-            "fill": "#d62728",
-            "fontFamily": "Impact",
-            "fontSize": "10px",
-          }
-        }
-        textAnchor="middle"
-        transform="translate(-19,48)rotate(0)">
-        duck
       </text>
     </g>
   </svg>

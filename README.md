@@ -22,7 +22,9 @@ const data = [
   { text: 'duck', value: 10 },
 ]
 
-<WordCloud data={data} />
+const fontSizeMapper = word => word.value * 2;
+
+<WordCloud data={data} fontSizeMapper={fontSizeMapper} />
 ```
 
 ## build

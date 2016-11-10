@@ -1,4 +1,3 @@
-
 import React from 'react';
 import renderer from 'react-test-renderer';
 
@@ -20,5 +19,13 @@ describe('index.js', () => {
     ).toJSON();
     expect(component).toMatchSnapshot();
     Math.random = originalRandom;
+  });
+
+  it('should call custom fontSizeMapper', () => {
+    const fontSizeMapper = jest.fn().mockReturnValue(10);
+    renderer.create(
+      <WordCloud data={data} fontSizeMapper={fontSizeMapper} />
+    );
+    expect(fontSizeMapper.mock.calls.length).toBe(data.length);
   });
 });
