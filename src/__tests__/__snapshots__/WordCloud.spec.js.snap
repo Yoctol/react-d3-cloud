@@ -17,7 +17,7 @@ exports[`index.js should contain all words 1`] = `
           }
         }
         textAnchor="middle"
-        transform="translate(0,0)rotate(0)">
+        transform="translate(0,0)rotate(-70)">
         lol
       </text>
       <text
@@ -29,7 +29,7 @@ exports[`index.js should contain all words 1`] = `
           }
         }
         textAnchor="middle"
-        transform="translate(-9,18)rotate(0)">
+        transform="translate(20,21)rotate(-80)">
         duck
       </text>
       <text
@@ -41,7 +41,7 @@ exports[`index.js should contain all words 1`] = `
           }
         }
         textAnchor="middle"
-        transform="translate(5,-16)rotate(0)">
+        transform="translate(18,0)rotate(-89)">
         cool
       </text>
     </g>

@@ -28,4 +28,12 @@ describe('index.js', () => {
     );
     expect(fontSizeMapper.mock.calls.length).toBe(data.length);
   });
+
+  it('should call custom rotater', () => {
+    const rotate = jest.fn().mockReturnValue(1);
+    renderer.create(
+      <WordCloud data={data} rotate={rotate} />
+    );
+    expect(rotate.mock.calls.length).toBe(data.length);
+  });
 });
