@@ -6,7 +6,7 @@ import cloud from 'd3-cloud';
 const fill = d3.scaleOrdinal(d3.schemeCategory10);
 
 const defaultFontSizeMapper = word => word.value;
-const defaultRotate = word => word.value % 180 - 90; // eslint-disable-line no-mixed-operators
+const defaultRotate = word => (word.value % 180) - 90;
 
 class WordCloud extends Component {
   static propTypes = {
