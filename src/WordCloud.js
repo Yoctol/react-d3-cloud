@@ -15,8 +15,14 @@ class WordCloud extends Component {
     })).isRequired,
     width: PropTypes.number,
     height: PropTypes.number,
-    padding: PropTypes.number,
-    font: PropTypes.string,
+    padding: PropTypes.oneOfType([
+      PropTypes.number,
+      PropTypes.func,
+    ]),
+    font: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.func,
+    ]),
     fontSizeMapper: PropTypes.func,
   }
 
