@@ -6,6 +6,7 @@ import cloud from 'd3-cloud';
 const fill = d3.scaleOrdinal(d3.schemeCategory10);
 
 const defaultFontSizeMapper = word => word.value;
+const defaultRotate = word => word.value % 180 - 90;
 
 class WordCloud extends Component {
   static propTypes = {
@@ -18,6 +19,7 @@ class WordCloud extends Component {
     padding: PropTypes.number,
     font: PropTypes.string,
     fontSizeMapper: PropTypes.func,
+    rotate: PropTypes.func,
   }
 
   static defaultProps = {
@@ -26,6 +28,7 @@ class WordCloud extends Component {
     padding: 5,
     font: 'serif',
     fontSizeMapper: defaultFontSizeMapper,
+    rotate: defaultRotate,
   }
 
   componentWillMount() {
@@ -33,7 +36,7 @@ class WordCloud extends Component {
   }
 
   render() {
-    const { data, width, height, padding, font, fontSizeMapper } = this.props;
+    const { data, width, height, padding, font, fontSizeMapper, rotate } = this.props;
     const wordCounts = data.map(
       text => ({ ...text })
     );
@@ -43,7 +46,7 @@ class WordCloud extends Component {
       .font(font)
       .words(wordCounts)
       .padding(padding)
-      .rotate(() => 0)
+      .rotate(rotate)
       .fontSize(fontSizeMapper)
       .on('end', words => {
         d3.select(this.wordCloud)
