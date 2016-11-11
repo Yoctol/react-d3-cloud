@@ -4,7 +4,7 @@
 [![Build Status][travis-image]][travis-url]
 [![Dependency Status][david_img]][david_site]
 
-A word cloud react component using d3-cloud
+A word cloud react component using `d3-cloud`
 
 ## usage
 ```
@@ -12,7 +12,9 @@ npm install react-d3-cloud
 ```
 
 ```jsx
-import WordCloud from 'react-d3-cloud'
+import React from 'react';
+import { render } from 'react-dom';
+import WordCloud from 'react-d3-cloud';
 
 const data = [
   { text: 'Hey', value: 1000 },
@@ -20,11 +22,14 @@ const data = [
   { text: 'first impression', value: 800 },
   { text: 'cool', value: 1 },
   { text: 'duck', value: 10 },
-]
+];
 
 const fontSizeMapper = word => word.value * 2;
 
-<WordCloud data={data} fontSizeMapper={fontSizeMapper} />
+render(
+  <WordCloud data={data} fontSizeMapper={fontSizeMapper} />,
+  document.getElementById('root')
+);
 ```
 
 ## example
