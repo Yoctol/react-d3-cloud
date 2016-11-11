@@ -4,5 +4,10 @@
   "env": {
     "node": true,
     "jest": true
+  },
+  "rules": {
+    "arrow-parens": ["error", "as-needed"],
+    "comma-dangle": "off",
+    "react/sort-prop-types": "off"
   }
 }
