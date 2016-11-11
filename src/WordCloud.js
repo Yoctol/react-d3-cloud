@@ -20,7 +20,7 @@ class WordCloud extends Component {
       PropTypes.func,
     ]),
     font: PropTypes.oneOfType([
-      PropTypes.string, 
+      PropTypes.string,
       PropTypes.func,
     ]),
     fontSizeMapper: PropTypes.func,
