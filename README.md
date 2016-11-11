@@ -4,7 +4,7 @@
 [![Build Status][travis-image]][travis-url]
 [![Dependency Status][david_img]][david_site]
 
-A word cloud react component using `d3-cloud`
+A word cloud react component using [d3-cloud](https://github.com/jasondavies/d3-cloud).
 
 ## usage
 ```
