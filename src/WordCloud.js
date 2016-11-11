@@ -19,7 +19,10 @@ class WordCloud extends Component {
     padding: PropTypes.number,
     font: PropTypes.string,
     fontSizeMapper: PropTypes.func,
-    rotate: PropTypes.func,
+    rotate: PropTypes.oneOfType([
+      PropTypes.number,
+      PropTypes.func,
+    ]),
   }
 
   static defaultProps = {
