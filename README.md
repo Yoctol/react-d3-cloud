@@ -27,6 +27,10 @@ const fontSizeMapper = word => word.value * 2;
 <WordCloud data={data} fontSizeMapper={fontSizeMapper} />
 ```
 
+## example
+![image](https://cloud.githubusercontent.com/assets/6868283/20204452/ac873c54-a80a-11e6-8872-252efc0c15da.png)
+There will be a official gh-pages demo in the next 2 releases.
+
 ## build
 ```
 npm run build
