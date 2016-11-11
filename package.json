@@ -9,7 +9,6 @@
     "build:dev": "babel src -d lib",
     "test-only": "jest",
     "test:watch": "npm run test-only -- --watch",
-    "coverage": "nyc --check-coverage --lines 10 --functions 10 npm run test-only",
     "test": "npm run lint && npm run test-only",
     "preversion": "npm test",
     "prepublish": "npm run build"
