@@ -8,6 +8,17 @@ const fill = d3.scaleOrdinal(d3.schemeCategory10);
 const defaultFontSizeMapper = word => word.value;
 
 class WordCloud extends Component {
+  static propTypes = {
+    data: PropTypes.arrayOf(PropTypes.shape({
+      text: PropTypes.string.isRequired,
+      value: PropTypes.number.isRequired,
+    })).isRequired,
+    width: PropTypes.number,
+    height: PropTypes.number,
+    font: PropTypes.string,
+    fontSizeMapper: PropTypes.func,
+  }
+
   static defaultProps = {
     width: 700,
     height: 600,
@@ -59,15 +70,5 @@ class WordCloud extends Component {
   }
 }
 
-WordCloud.propTypes = {
-  data: PropTypes.arrayOf(PropTypes.shape({
-    text: PropTypes.string.isRequired,
-    value: PropTypes.number.isRequired,
-  })).isRequired,
-  width: PropTypes.number,
-  height: PropTypes.number,
-  font: PropTypes.string,
-  fontSizeMapper: PropTypes.func,
-};
 
 export default WordCloud;
