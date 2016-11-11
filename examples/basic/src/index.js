@@ -10,7 +10,7 @@ const data = [
   { text: 'duck', value: 10 },
 ];
 
-const fontSizeMapper = word => word.value * 2;
+const fontSizeMapper = word => Math.log2(word.value) * 5;
 
 render(
   <WordCloud data={data} fontSizeMapper={fontSizeMapper} />,
