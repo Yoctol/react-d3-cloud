@@ -15,6 +15,7 @@ class WordCloud extends Component {
     })).isRequired,
     width: PropTypes.number,
     height: PropTypes.number,
+    padding: PropTypes.number,
     font: PropTypes.string,
     fontSizeMapper: PropTypes.func,
   }
@@ -22,6 +23,7 @@ class WordCloud extends Component {
   static defaultProps = {
     width: 700,
     height: 600,
+    padding: 5,
     font: 'serif',
     fontSizeMapper: defaultFontSizeMapper,
   }
@@ -31,7 +33,7 @@ class WordCloud extends Component {
   }
 
   render() {
-    const { data, width, height, font, fontSizeMapper } = this.props;
+    const { data, width, height, padding, font, fontSizeMapper } = this.props;
     const wordCounts = data.map(
       text => ({ ...text })
     );
@@ -40,7 +42,7 @@ class WordCloud extends Component {
       .size([width, height])
       .font(font)
       .words(wordCounts)
-      .padding(5)
+      .padding(padding)
       .rotate(() => 0)
       .fontSize(fontSizeMapper)
       .on('end', words => {
