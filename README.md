@@ -37,9 +37,21 @@ render(
 );
 ```
 
-## example
-![image](https://cloud.githubusercontent.com/assets/6868283/20204452/ac873c54-a80a-11e6-8872-252efc0c15da.png)
-There will be a official gh-pages demo in the next 2 releases.
+for more detailed props, please refer to below:
+
+
+## Props
+
+name | description | type | default
+-----|-------------|------|--------
+data|the input data for rendering|Array, each element should have shape: `{ text: String, value: NUmber}`|N/A, should be provided
+width|width of component |number|700
+height|height of component|number|600
+fontSizeMapper|map each element of `data` to font size|function: `(word, idx) => {return number}`|`word => word.value;`
+rotate|Map each element of `data` to font rotation degree. Or simply provide a number for global rotation.|function or number|0
+padding|Map each element of `data` to font padding. Or simply provide a number for global padding.|function or number|5
+font|the font of text shown|function or string|serif
+
 
 ## build
 ```
