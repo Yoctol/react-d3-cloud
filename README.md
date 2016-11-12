@@ -44,12 +44,12 @@ for more detailed props, please refer to below:
 
 name | description | type | default
 -----|-------------|------|--------
-data|the input data for rendering|Array, each element should have shape: `{ text: String, value: NUmber}`|N/A, should be provided
-width|width of component |number|700
-height|height of component|number|600
-fontSizeMapper|map each element of `data` to font size|function: `(word, idx) => {return number}`|`word => word.value;`
-rotate|Map each element of `data` to font rotation degree. Or simply provide a number for global rotation.|function or number|0
-padding|Map each element of `data` to font padding. Or simply provide a number for global padding.|function or number|5
+data|the input data for rendering|Array, each element should have shape: `{ text: String, value: Number}`|N/A, should be provided
+width|width of component(px) |number|700
+height|height of component(px)|number|600
+fontSizeMapper|map each element of `data` to font size(px)|function: `(word, idx) => {return number}`|`word => word.value;`
+rotate|Map each element of `data` to font rotation degree. Or simply provide a number for global rotation.(degree)|function or number|0
+padding|Map each element of `data` to font padding. Or simply provide a number for global padding.(px)|function or number|5
 font|the font of text shown|function or string|serif
 
 
