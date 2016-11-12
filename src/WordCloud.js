@@ -5,7 +5,6 @@ import cloud from 'd3-cloud';
 
 import {
   defaultFontSizeMapper,
-  defaultRotate,
 } from './defaultMappers';
 
 
@@ -41,7 +40,7 @@ class WordCloud extends Component {
     padding: 5,
     font: 'serif',
     fontSizeMapper: defaultFontSizeMapper,
-    rotate: defaultRotate,
+    rotate: 0,
   }
 
   componentWillMount() {
