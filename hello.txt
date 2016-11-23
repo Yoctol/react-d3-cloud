@@ -1,68 +1,64 @@
 AFRIKAANS   goeiedag
 ALBANIAN    mirë dita
-ALSATIAN    guàtertag / ponchour / guate morye (morning) / guatenowe (evening)
+ALSATIAN    guàtertag
 AMHARIC dana esteline
 ARABIC  صباح الخير / salam / sabâhu al khair
 ARAMAIC chlomo
 ARMENIAN    barev
-AUSTRIAN GERMAN grüß Gott (formal) / servus (informal)
+AUSTRIAN servus
 AZERI   salam
-BAMBARA ani sogomen (morning) / ani tlé (afternoon) / ani oulà (evening)
+BAMBARA ani sogomen
 BAMOUN  me sha'she
-BAOULÉ  n'dja arè (to a man) / mô arè (to a woman)
-BASQUE  egunon (morning) / arratsaldeon (afternoon) / gauon (evening)
-BASSA   menyéga (to one person) / menyéga bé (to several persons)
-BELARUSIAN  vitaju / dobraj ranicy (morning) / dzien dobry (afternoon) / viečar dobry (evening) 
-Прывiтанне (pryvitannie)
+BAOULÉ  n'dja arè / mô arè
+BASQUE  egunon
+BASSA   menyéga
+BELARUSIAN  vitaju
 BENGALI namaskar
 BERBER  ass-iyessbhène / ass ameggaz / azul
 BERI-BERI (KANURI)  inda wadou
 BÉTÉ    ayo
-BOBO    ka tiana (morning) / ka sion (afternoon) / ka lima (evening)
-BOSNIAN dobardan (day time) / dobrojutro (morning) / dobarvece (evening) / zdravo ("hi")
+BOBO    ka tiana
+BOSNIAN zdravo ("hi")
 BRETON  demat
-BULGARIAN   добър ден (dóbar den) / Здравей (zdrave)
+BULGARIAN   добър ден / Здравей
 BURMESE mingalaba
 CATALAN bon dia / hola
 CHAMORRO    hafa adai
 CHEROKEE    osiyo
-CHINESE (MANDARIN)  你好 [nǐ hăo] (informal) / 您好 [nín hǎo] (formal)
-CORNISH de(th) da (good day) / myttyn da (good morning) / gorthewer da (good evening) / nos da (good night)
+CHINESE (MANDARIN)  你好 / 您好
+CORNISH myttyn da
 CORSICAN    bonghjornu / salutu
 CROATIAN    bok / dobar dan
 CZECH   dobrý den
-DANISH  goddag (formal) / hej (coll.)
+DANISH  goddag / hej
 DARI    salâm
-DJERMA (ZARMA)  mat ni kani (morning) / mat aren foy (afternoon)
-DJOULA  anissoroma (morning) / anissou (evening)
-DOGON   alapiale (morning) / alapiagili (afternoon)
-DUTCH   goede morgen / goede middag / goede avond 
-(morning / afternoon / evening)
+DJERMA  mat ni kani
+DJOULA  anissoroma
+DOGON   alapiale
+DUTCH   goede morgen / goede middag / goede avond
 EDE-IDAASHA ékooni
 ENGLISH hello
 ESPERANTO   bonan tagon / saluton
 ESTONIAN    tere / tere hommikust
-good evening : tere õhtust
-FANG    mbolo (1 pers.) / mboloani (X pers.)
+FANG    mbolo
 FAROESE hey
 FIJIAN  yadra
-FINNISH hyvää päivää (formal) / päivää (semi formal)
-moi / hei / terve
+FINNISH hyvää päivää
 FLEMISH hoeien nuh'nt
-FRENCH  bonjour (morning) / bonsoir (evening) / salut (colloquial)
+FRENCH  bonjour
 FRISIAN ha / goeie / hoi
 FRIULAN bondi
-FULANI  diarama (one person) / ong diarama (several people)
+FULANI  diarama
 GALICIAN    ola
 GALLO   bonjou / salu
-GEORGIAN    gamarjoba (anytime) / dila mshvidobisa (good morning)
-GERMAN  hallo / guten Tag (more polite)
-GOTHIC  hails (to a man) / haila (to a woman) / hailai (plural m.) / hailos (plural f.)
-GREEK   gia / kalimera (good morning)
+GEORGIAN    gamarjoba
+GERMAN  hallo / guten Tag
+GOTHIC  hails
+GREEK   gia / kalimera
 GUARANÍ mba'éichapa
 GUJARATI    kem cho
-HAITIAN CREOLE  bonjou / bon swa / la rezone / alo
-HAUSA   ina kwana (morning) / ina wini (afternoon)
+HAITIANCREOLE  bonjou / bon swa / la rezone / alo
+HAUSA   ina kwana
 HAWAIIAN    aloha
 HEBREW  shalom
 HINDI   namaste / namaskaar
@@ -70,115 +66,94 @@ HMONG   nyob zoo
 HUNGARIAN   jó napot kívánok / szia
 ICELANDIC   goðan dagin / halló
 IGBO    ndeewo / i boola chi / ututu oma
-INDONESIAN  morning: selamat pagi 
-noon: selamat siang 
-afternoon: selamat sore 
-evening: selamat malam
+INDONESIAN  selamat pagi
 INUKTITUT   ullaakkut
 IRISH GAELIC    Dia duit
-ITALIAN ciao / buongiorno (good morning)
-JAPANESE    konnichi wa 
-ohayô (gozaimasu) (in the morning - more polite with "gozaimasu")
+ITALIAN ciao / buongiorno
+JAPANESE    konnichi wa
 KABIYÈ  ŋlɩwa'lɛ (nliwalè)
 KABYLIAN    azul
-KHMER   chumreap suor (formal) / susdey (informal)
-KINYARWANDA mwaramutsé (morning) / mwiriwe (mid-day) / muramuke (evening)
+KHMER   chumreap suor
+KINYARWANDA mwaramutsé
 KOREAN  annyǒng hashimnikka / annyong haseyo
-KOTOKOLI    gna vin kazô (sing) / mii vin kazô (plur)
+KOTOKOLI    gna vin kazô
 KURDISH rojbas / silav
 LAO sabai di
-LATIN   salve, ave (addressing 1 pers.) / salvete, avete (X pers.)
+LATIN   salve, ave
 LATVIAN labdien
 LIGURIAN    ciâo / scignorîa
 LINGALA mbote
-LITHUANIAN  laba diena 
-labas rytas (morning) / labas vakaras (evening)
+LITHUANIAN  laba diena
 LOW SAXON   hallo / houje
 LUXEMBOURGEOIS  moien / gudde moien
 MACEDONIAN  dobar den / zdravo
 MALAGASY    manao ahoana / manahoana
-MALAY   selamat pagi (morning) / selamat tengahari (afternoon)
-selamat petang (evening) / selamat malam (after sunset)
+MALAY   selamat pagi
 MALAYALAM   namaskaram
 MALTESE merħba / oj
-MANJACK befa (morning) / penak (afternoon) / betakala (evening)
+MANJACK befa
 MAORI   kia ora
-MAPUCHE (MAPUDUNGUN)    mari-mari
+MAPUCHE(MAPUDUNGUN)    mari-mari
 MBOUDA  ozông tchî
 MEDUMBA mə́ cà'tə̀ ū
 MINAN   kia bo
 MOBA    doangouam
-MONGOLIAN   sain baina uu (Сайн байна уу)
+MONGOLIAN   sain baina uu
 MORÉ    né yibéogo / yibé
 NEPALI  namaste
 NORMAN  boujou / warro
-NORMAN (GUERNÉSIAIS)    warro
-NORMAN (JÈRRIAIS)   wharro
-NORWEGIAN   god dag / hei / morn / god morgon (nynorsk) / god morgen (bokmål)
-NUFI (FE'EFE'E) mbə̄ə̄ lɑ́ / ngɑ̌ cɑ̀'sì ō / nzɑ̌ léé è
+NORMAN(GUERNÉSIAIS)    warro
+NORMAN(JÈRRIAIS)   wharro
+NORWEGIAN   god dag / hei
 OCCITAN bon jorn / adieu
-OLD NORSE   heill (to a man) / heil (to a woman) / heilir (to several men) / heilar (to several women) / heil (men and women)
-PAPIAMENTU  bon dia (good day) / bon tardi (good afternoon) / bon nochi (good evening/night)
-PASHTO  stele mashe
-PERSIAN dorood / سلام (salâm)
-POLISH  dzień dobry / dobry wieczór (le soir)
-PORTUGUESE  bom dia (morning) / boa tarde (after 12.00) / boa noite (evening)
-oi / olá
+OLDNORSE   heil
+PAPIAMENTU  bon dia
+PERSIAN سلام
+POLISH  dzień dobry / dobry wieczór
+PORTUGUESE  bom dia
 PUNJABI sat sri akal
 ROMANI  latcho divès
 ROMANIAN    bună ziua
-RUSSIAN Добрый день (dobrii den) / Здравствуйте (zdravstvuitye) / Привет (privet)
-SAMI (NORTHERN) bures
+RUSSIAN Добрый день
+SAMI bures
 SAMOAN  talofa
-SANGO   bara mo 
-bara Âla (formal) 
-bara âla (several people)
+SANGO   bara mo
 SARDINIAN   bona die
 SCOTTISH GAELIC hallo
 SERBIAN dobar dan / zdravo
 SHIMAORE    jéjé
-SHONA   mhoro (plural: mhoroi)
+SHONA   mhoro
 SINDHI  acho saiin
 SINHALA ayubowan
-SLOVAK  dobré ráno (morning) 
-dobrý deň (during the day) 
-dobrý večer (evening)
-SLOVENIAN   pozdravljen (to a man) / pozdravljena (to 2 men) / pozdravljeni (to 3 men or more) 
-pozdravljena (to a woman) / pozdravljeni (to 2 women) / pozdravljene (to 3 women or more) 
-pozdravljeni (mixed group) 
-dobro jutro (good morning) / dober dan (good day) / dober večer (good evening) 
-lahko noč (good night - taking leave) 
-živijo (colloquial)
+SLOVAK  dobré ráno
+SLOVENIAN   pozdravljen
 SOBOTA  dobar dan
 SONINKÉ an mou diom
 SPANISH buenos días / hola
 SWAHILI yambo
 SWEDISH god dag / hej
-SWISS-GERMAN    guete tog / grüessech / grützi / muerge (morning)
+SWISS-GERMAN    guete tog / grüessech
 SYRIAC  chlomo
-TAGALOG kumusta (po) / magandang araw
+TAGALOG kumusta
 TAHITIAN    'ia ora na
 TAMACHEK    wayi wan
 TAMAZIGHT   azul
-TAMIL   vanakam / kallaï vannakam (morning only)
+TAMIL   vanakam / kallaï vannakam
 TELUGU  namaskaram
-THAI    สวัสดีค่ะ [sawatdii kha] (woman speaking) 
-สวัสดีครับ [sawatdii khrap] (man speaking)
+THAI    สวัสดีค่ะ
 TIBETAN tashi delek
 TONGAN  malo e lelei
-TOUBOU  wossoura (to 1 person) / wassara (to several persons)
+TOUBOU  wossoura
 TURKISH merhaba
-UDMURT  dzéchbur (common form for one person) 
-dzéchbureś (polite form for one person or common form for two or more people)
-UKRAINIAN   Вітаю [vitaju] (hello) / Привiт [pryvit] (hi) / Добрий ранок [dobryi ranok] (good morning)
-Добрий день [dobryi den] (good afternoon) / Добрий вечiр [dobryi vechir] (good evening)
+UDMURT  dzéchbur
+UKRAINIAN   Вітаю
 URDU    as salaamo alaikum
 UZBEK   assalomu alaykum
-VIETNAMESE  chào (ông, bà, cô : Mr, Mrs, Miss)
-WALLISIAN   malo te mauli (morning) / malo te kàtaki (afternoon)
-WALOON (betchfessis spelling)   bondjoû / ay! / Diè wåde
+VIETNAMESE  chào
+WALLISIAN   malo te mauli
+WALOON  bondjoû / ay! / Diè wåde
 WELSH   hylo / sut mae
 WEST INDIAN CREOLE  bonjou
 WOLOF   nangadef
 YORUBA  e karo
-ZULU    sawubona (to one person) / sanibonani (to more than one person)
+ZULU    sawubona
