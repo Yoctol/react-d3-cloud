@@ -1,3 +1,6 @@
+import json
+import random
+
 def main():
     words = []
     with open('hello.txt', 'r') as f:
@@ -6,10 +9,12 @@ def main():
             pure_hello = pure_hellos.split('/')
             words = words + pure_hello
 
-    with open('hello_parse.txt', 'w') as fw:
-        for word in words:
-            fw.write(word)
-            fw.write('\n')
+    data = []
+    for word in words:
+        data.append({'text': word, 'value': random.randint(1, 1000)})
+
+    with open('hello.json', 'w') as fw:
+        json.dump(data, fw)
 
 
 if __name__ == '__main__':
