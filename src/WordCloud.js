@@ -3,10 +3,13 @@ import ReactFauxDom from 'react-faux-dom';
 import * as d3 from 'd3';
 import cloud from 'd3-cloud';
 
+import {
+  defaultFontSizeMapper,
+} from './defaultMappers';
+
+
 const fill = d3.scaleOrdinal(d3.schemeCategory10);
 
-const defaultFontSizeMapper = word => word.value;
-const defaultRotate = word => (word.value % 180) - 90;
 
 class WordCloud extends Component {
   static propTypes = {
@@ -37,7 +40,7 @@ class WordCloud extends Component {
     padding: 5,
     font: 'serif',
     fontSizeMapper: defaultFontSizeMapper,
-    rotate: defaultRotate,
+    rotate: 0,
   }
 
   componentWillMount() {

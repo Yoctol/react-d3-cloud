@@ -1,0 +1,1 @@
+export defaultFontSizeMapper from './defaultFontSizeMapper';
