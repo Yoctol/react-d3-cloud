@@ -16,26 +16,37 @@ import React from 'react';
 import { render } from 'react-dom';
 import WordCloud from 'react-d3-cloud';
 
-const data = [
-  { text: 'Hey', value: 1000 },
-  { text: 'lol', value: 200 },
-  { text: 'first impression', value: 800 },
-  { text: 'very cool', value: 1000000 },
-  { text: 'duck', value: 10 },
-];
+import data from '../../hello.json';
 
-const fontSizeMapper = word => Math.log2(word.value) * 5;
-const rotate = word => word.value % 360;
+const fontSizeMapper = word => word.value / 20;
+const rotate = word => (word.value % 90) - 45;
+
+class WordCloudDemo extends React.Component {
+  render() {
+    const newData = data.map(item => ({
+      text: item.text,
+      value: Math.random() * 1000,
+    }));
+    return (
+      <WordCloud
+        width={1000}
+        height={750}
+        data={newData}
+        fontSizeMapper={fontSizeMapper}
+        rotate={rotate}
+        padding={2}
+      />
+    );
+  }
+}
 
 render(
-  <WordCloud 
-    data={data} 
-    fontSizeMapper={fontSizeMapper}
-    rotate={rotate} 
-  />,
+  <WordCloudDemo />,
   document.getElementById('root')
 );
 ```
+
+Please checkout [demo](https://yoctol.github.com/react-d3-cloud)
 
 for more detailed props, please refer to below:
 
