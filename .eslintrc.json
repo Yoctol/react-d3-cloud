@@ -3,7 +3,8 @@
   "extends": "yoctol",
   "env": {
     "node": true,
-    "jest": true
+    "jest": true,
+    "browser": true
   },
   "rules": {
     "arrow-parens": ["error", "as-needed"],
