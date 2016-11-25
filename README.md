@@ -6,6 +6,8 @@
 
 A word cloud react component using [d3-cloud](https://github.com/jasondavies/d3-cloud).
 
+![image](https://cloud.githubusercontent.com/assets/6868283/20619528/fa83334c-b32f-11e6-81dd-6fe4fa6c52d9.png)
+
 ## usage
 ```
 npm install react-d3-cloud
@@ -16,32 +18,23 @@ import React from 'react';
 import { render } from 'react-dom';
 import WordCloud from 'react-d3-cloud';
 
-import data from '../../hello.json';
+const data = [
+  { text: 'Hey', value: 1000 },
+  { text: 'lol', value: 200 },
+  { text: 'first impression', value: 800 },
+  { text: 'very cool', value: 1000000 },
+  { text: 'duck', value: 10 },
+];
 
-const fontSizeMapper = word => word.value / 20;
-const rotate = word => (word.value % 90) - 45;
-
-class WordCloudDemo extends React.Component {
-  render() {
-    const newData = data.map(item => ({
-      text: item.text,
-      value: Math.random() * 1000,
-    }));
-    return (
-      <WordCloud
-        width={1000}
-        height={750}
-        data={newData}
-        fontSizeMapper={fontSizeMapper}
-        rotate={rotate}
-        padding={2}
-      />
-    );
-  }
-}
+const fontSizeMapper = word => Math.log2(word.value) * 5;
+const rotate = word => word.value % 360;
 
 render(
-  <WordCloudDemo />,
+  <WordCloud
+    data={data}
+    fontSizeMapper={fontSizeMapper}
+    rotate={rotate}
+  />,
   document.getElementById('root')
 );
 ```
