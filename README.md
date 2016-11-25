@@ -6,6 +6,8 @@
 
 A word cloud react component using [d3-cloud](https://github.com/jasondavies/d3-cloud).
 
+![image](https://cloud.githubusercontent.com/assets/6868283/20619528/fa83334c-b32f-11e6-81dd-6fe4fa6c52d9.png)
+
 ## usage
 ```
 npm install react-d3-cloud
