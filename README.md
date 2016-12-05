@@ -46,15 +46,15 @@ for more detailed props, please refer to below:
 
 ## Props
 
-name | description | type | default
------|-------------|------|--------
-data | The input data for rendering | Array<{ text: string, value: number}>  | N/A, should be provided
-width | Width of component (px) | number | 700
-height | Height of component (px) | number | 600
-fontSizeMapper | Map each element of `data` to font size (px)|function: `(word: string, idx: number): number`|`word => word.value;`
-rotate | Map each element of `data` to font rotation degree. Or simply provide a number for global rotation. (degree) | Function \| number | 0
-padding | Map each element of `data` to font padding. Or simply provide a number for global padding. (px) | Function \| number | 5
-font | The font of text shown | Function \| string | serif
+name | description | type | required | default
+-----|-------------|------|----------|--------
+data | The input data for rendering | Array<{ text: string, value: number }>  | ✓ | 
+width | Width of component (px) | number | | 700
+height | Height of component (px) | number | | 600
+fontSizeMapper | Map each element of `data` to font size (px) | Function: `(word: string, idx: number): number` | | `word => word.value;`
+rotate | Map each element of `data` to font rotation degree. Or simply provide a number for global rotation. (degree) | Function \| number | | 0
+padding | Map each element of `data` to font padding. Or simply provide a number for global padding. (px) | Function \| number | | 5
+font | The font of text shown | Function \| string | | serif
 
 
 ## build
