@@ -53,6 +53,10 @@ class WordCloud extends Component {
       text => ({ ...text })
     );
 
+    // clear old words
+    d3.select(this.wordCloud).selectAll('*').remove();
+
+    // render based on new data
     const layout = cloud()
       .size([width, height])
       .font(font)
