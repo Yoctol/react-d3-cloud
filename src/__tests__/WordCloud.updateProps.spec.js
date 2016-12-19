@@ -24,8 +24,9 @@ describe('index.js', () => {
       { text: 'lol', value: 199 },
       { text: 'cool', value: 2 },
       { text: 'duck', value: 30 },
+      { text: 'crazy', value: 60 },
     ];
     component.setProps({ data: newData });
-    expect(component.find('g').children().length).toBe(4);
+    expect(component.find('g').children().length).toBe(5);
   });
 });
