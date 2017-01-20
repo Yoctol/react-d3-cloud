@@ -4,12 +4,13 @@
 [![Build Status][travis-image]][travis-url]
 [![Dependency Status][david_img]][david_site]
 
-A word cloud react component using [d3-cloud](https://github.com/jasondavies/d3-cloud).
+A word cloud react component built with [d3-cloud](https://github.com/jasondavies/d3-cloud).
 
 ![image](https://cloud.githubusercontent.com/assets/6868283/20619528/fa83334c-b32f-11e6-81dd-6fe4fa6c52d9.png)
 
-## usage
-```
+## Usage
+
+```sh
 npm install react-d3-cloud
 ```
 
@@ -48,7 +49,7 @@ for more detailed props, please refer to below:
 
 name | description | type | required | default
 -----|-------------|------|----------|--------
-data | The input data for rendering | Array<{ text: string, value: number }>  | ✓ | 
+data | The input data for rendering | Array<{ text: string, value: number }>  | ✓ |
 width | Width of component (px) | number | | 700
 height | Height of component (px) | number | | 600
 fontSizeMapper | Map each element of `data` to font size (px) | Function: `(word: string, idx: number): number` | | `word => word.value;`
@@ -57,23 +58,30 @@ padding | Map each element of `data` to font padding. Or simply provide a number
 font | The font of text shown | Function \| string | | serif
 
 
-## build
-```
+## Build
+
+```sh
 npm run build
 ```
 
 ## Test
 
 ### pre-install
-```
+
+```sh
 sudo apt-get install libcairo2-dev libjpeg8-dev libpango1.0-dev libgif-dev build-essential g++
 npm install
 ```
 
 ### Run test
-```
+
+```sh
 npm test
 ```
+
+## License
+
+MIT © [Yoctol](https://github.com/Yoctol/react-d3-cloud)
 
 [npm-image]: https://img.shields.io/npm/v/react-d3-cloud.svg?style=flat-square
 [npm-url]: https://npmjs.org/package/react-d3-cloud
