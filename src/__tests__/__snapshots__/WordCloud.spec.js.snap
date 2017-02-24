@@ -1,13 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
 exports[`index.js should contain all words 1`] = `
 <div
-  style={Object {}}>
+  style={Object {}}
+>
   <svg
     height={600}
     style={Object {}}
-    width={700}>
+    width={700}
+  >
     <g
       style={Object {}}
-      transform="translate(350,300)">
+      transform="translate(350,300)"
+    >
       <text
         style={
           Object {
@@ -17,7 +22,8 @@ exports[`index.js should contain all words 1`] = `
           }
         }
         textAnchor="middle"
-        transform="translate(0,0)rotate(0)">
+        transform="translate(0,0)rotate(0)"
+      >
         lol
       </text>
       <text
@@ -29,7 +35,8 @@ exports[`index.js should contain all words 1`] = `
           }
         }
         textAnchor="middle"
-        transform="translate(-9,18)rotate(0)">
+        transform="translate(-9,18)rotate(0)"
+      >
         duck
       </text>
       <text
@@ -41,7 +48,8 @@ exports[`index.js should contain all words 1`] = `
           }
         }
         textAnchor="middle"
-        transform="translate(5,-16)rotate(0)">
+        transform="translate(5,-16)rotate(0)"
+      >
         cool
       </text>
     </g>
