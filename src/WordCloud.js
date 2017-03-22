@@ -32,6 +32,8 @@ class WordCloud extends Component {
       PropTypes.number,
       PropTypes.func,
     ]),
+    color: PropTypes.string,
+    colors: PropTypes.arrayOf(PropTypes.string)
   }
 
   static defaultProps = {
@@ -41,6 +43,8 @@ class WordCloud extends Component {
     font: 'serif',
     fontSizeMapper: defaultFontSizeMapper,
     rotate: 0,
+    color: undefined,
+    colors: []
   }
 
   componentWillMount() {
@@ -48,13 +52,18 @@ class WordCloud extends Component {
   }
 
   render() {
-    const { data, width, height, padding, font, fontSizeMapper, rotate } = this.props;
+    const { data, width, height, padding, font, fontSizeMapper, rotate,
+      colors, color } = this.props;
     const wordCounts = data.map(
       text => ({ ...text })
     );
 
     // clear old words
     d3.select(this.wordCloud).selectAll('*').remove();
+
+    const fillColor = (colors.length === 0 && !color)
+    ? (d, i) => fill(i)
+    : (d, i) => (i < colors.length ? colors[i] : color);
 
     // render based on new data
     const layout = cloud()
@@ -77,7 +86,7 @@ class WordCloud extends Component {
           .append('text')
           .style('font-size', d => `${d.size}px`)
           .style('font-family', 'Impact')
-          .style('fill', (d, i) => fill(i))
+          .style('fill', fillColor)
           .attr('text-anchor', 'middle')
           .attr('transform',
             d => `translate(${[d.x, d.y]})rotate(${d.rotate})`
