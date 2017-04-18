@@ -76,7 +76,7 @@ class WordCloud extends Component {
           .enter()
           .append('text')
           .style('font-size', d => `${d.size}px`)
-          .style('font-family', 'Impact')
+          .style('font-family', font)
           .style('fill', (d, i) => fill(i))
           .attr('text-anchor', 'middle')
           .attr('transform',
