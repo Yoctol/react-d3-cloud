@@ -17,7 +17,7 @@ exports[`index.js should contain all words 1`] = `
         style={
           Object {
             "fill": "#1f77b4",
-            "fontFamily": "Impact",
+            "fontFamily": "serif",
             "fontSize": "200px",
           }
         }
@@ -30,7 +30,7 @@ exports[`index.js should contain all words 1`] = `
         style={
           Object {
             "fill": "#ff7f0e",
-            "fontFamily": "Impact",
+            "fontFamily": "serif",
             "fontSize": "10px",
           }
         }
@@ -43,7 +43,7 @@ exports[`index.js should contain all words 1`] = `
         style={
           Object {
             "fill": "#2ca02c",
-            "fontFamily": "Impact",
+            "fontFamily": "serif",
             "fontSize": "1px",
           }
         }

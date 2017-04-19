@@ -29,9 +29,4 @@ describe('index.js', () => {
     component.setProps({ data: newData });
     expect(component.find('g').children().length).toBe(5);
   });
-
-  it('should render with passed in font', () => {
-    const component = shallow(<WordCloud data={data} font="Futura" />);
-    expect(component.find('g').children().first().style.fontFamily).toBe('Futura');
-  });
 });
