@@ -1,6 +1,7 @@
 import { Component, PropTypes } from 'react';
 import ReactFauxDom from 'react-faux-dom';
-import * as d3 from 'd3';
+import { select } from 'd3-selection';
+import { scaleOrdinal, schemeCategory10 } from 'd3-scale';
 import cloud from 'd3-cloud';
 
 import {
@@ -8,7 +9,7 @@ import {
 } from './defaultMappers';
 
 
-const fill = d3.scaleOrdinal(d3.schemeCategory10);
+const fill = scaleOrdinal(schemeCategory10);
 
 
 class WordCloud extends Component {
@@ -54,7 +55,7 @@ class WordCloud extends Component {
     );
 
     // clear old words
-    d3.select(this.wordCloud).selectAll('*').remove();
+    select(this.wordCloud).selectAll('*').remove();
 
     // render based on new data
     const layout = cloud()
@@ -65,7 +66,7 @@ class WordCloud extends Component {
       .rotate(rotate)
       .fontSize(fontSizeMapper)
       .on('end', words => {
-        d3.select(this.wordCloud)
+        select(this.wordCloud)
           .append('svg')
           .attr('width', layout.size()[0])
           .attr('height', layout.size()[1])

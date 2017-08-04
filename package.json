@@ -52,8 +52,9 @@
     "react-test-renderer": "^15.4.2"
   },
   "dependencies": {
-    "d3": "^4.4.2",
     "d3-cloud": "^1.2.4",
+    "d3-scale": "^1.0.6",
+    "d3-selection": "^1.1.0",
     "react-faux-dom": "^3.0.0"
   },
   "peerDependencies": {
