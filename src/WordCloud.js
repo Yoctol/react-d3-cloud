@@ -10,7 +10,6 @@ import {
 
 const fill = scaleOrdinal(schemeCategory10);
 
-const defaultFontSizeMapper = word => word.value;
 const defaultclickEvent = (word) => {console.log(word)};
 
 class WordCloud extends Component {
