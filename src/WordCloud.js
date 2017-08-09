@@ -8,51 +8,54 @@ import {
   defaultFontSizeMapper,
 } from './defaultMappers';
 
-
 const fill = scaleOrdinal(schemeCategory10);
 
+const defaultFontSizeMapper = word => word.value;
+const defaultclickEvent = (word) => {console.log(word)};
 
 class WordCloud extends Component {
-  static propTypes = {
-    data: PropTypes.arrayOf(PropTypes.shape({
-      text: PropTypes.string.isRequired,
-      value: PropTypes.number.isRequired,
-    })).isRequired,
-    width: PropTypes.number,
-    height: PropTypes.number,
-    padding: PropTypes.oneOfType([
-      PropTypes.number,
-      PropTypes.func,
-    ]),
-    font: PropTypes.oneOfType([
-      PropTypes.string,
-      PropTypes.func,
-    ]),
-    fontSizeMapper: PropTypes.func,
-    rotate: PropTypes.oneOfType([
-      PropTypes.number,
-      PropTypes.func,
-    ]),
-  }
+    static propTypes = {
+        data: PropTypes.arrayOf(PropTypes.shape({
+            text: PropTypes.string.isRequired,
+            value: PropTypes.number.isRequired,
+        })).isRequired,
+        width: PropTypes.number,
+        height: PropTypes.number,
+        padding: PropTypes.oneOfType([
+            PropTypes.number,
+            PropTypes.func,
+        ]),
+        font: PropTypes.oneOfType([
+            PropTypes.string,
+            PropTypes.func,
+        ]),
+        fontSizeMapper: PropTypes.func,
+        clickEvent: PropTypes.func,
+        rotate: PropTypes.oneOfType([
+            PropTypes.number,
+            PropTypes.func,
+        ]),
+    }
 
-  static defaultProps = {
-    width: 700,
-    height: 600,
-    padding: 5,
-    font: 'serif',
-    fontSizeMapper: defaultFontSizeMapper,
-    rotate: 0,
-  }
+    static defaultProps = {
+        width: 700,
+        height: 600,
+        padding: 5,
+        font: 'serif',
+        fontSizeMapper: defaultFontSizeMapper,
+        rotate: 0,
+        clickEvent: defaultclickEvent
+    }
 
-  componentWillMount() {
-    this.wordCloud = ReactFauxDom.createElement('div');
-  }
+    componentWillMount() {
+        this.wordCloud = ReactFauxDom.createElement('div');
+    }
 
-  render() {
-    const { data, width, height, padding, font, fontSizeMapper, rotate } = this.props;
-    const wordCounts = data.map(
-      text => ({ ...text })
-    );
+    render() {
+        const { data, width, height, padding, font, fontSizeMapper, rotate, clickEvent} = this.props;
+        const wordCounts = data.map(
+            text => ({ ...text })
+        );
 
     // clear old words
     select(this.wordCloud).selectAll('*').remove();
@@ -83,14 +86,15 @@ class WordCloud extends Component {
           .attr('transform',
             d => `translate(${[d.x, d.y]})rotate(${d.rotate})`
           )
-          .text(d => d.text);
+          .text(d => d.text)
+          .on("click", function(d) {
+            clickEvent(d);
+          });
       });
+      layout.start();
 
-    layout.start();
-
-    return this.wordCloud.toReact();
-  }
+      return this.wordCloud.toReact();
+    }
 }
-
 
 export default WordCloud;
