@@ -7,7 +7,7 @@
     "lint": "eslint .",
     "build": "NODE_ENV=production npm run build:dev",
     "build:dev": "babel src -d lib --ignore __tests__",
-    "test-only": "jest",
+    "test-only": "jest --no-cache",
     "test:watch": "npm run test-only -- --watch",
     "test": "npm run lint && npm run test-only",
     "preversion": "npm test",
