@@ -46,7 +46,8 @@
     "eslint-plugin-jsx-a11y": "^5.0.3",
     "eslint-plugin-react": "7.1.0",
     "jest": "^20.0.0",
-    "react": "^15.4.2",
+    "prop-types": "^15.5.10",
+    "react": "^15.6.1",
     "react-addons-test-utils": "^15.4.2",
     "react-dom": "^15.4.2",
     "react-test-renderer": "^15.4.2"
@@ -58,7 +59,7 @@
     "react-faux-dom": "^3.0.0"
   },
   "peerDependencies": {
-    "react": "^0.14.0 || ^15.0.0-0"
+    "react": "^0.14.0 || ^15.0.0-0 || ^16.0.0-0"
   },
   "jest": {
     "verbose": true

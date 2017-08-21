@@ -1,4 +1,5 @@
-import { Component, PropTypes } from 'react';
+import { Component } from 'react';
+import PropTypes from 'prop-types';
 import ReactFauxDom from 'react-faux-dom';
 import { select } from 'd3-selection';
 import { scaleOrdinal, schemeCategory10 } from 'd3-scale';
