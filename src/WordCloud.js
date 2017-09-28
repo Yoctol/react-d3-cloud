@@ -9,9 +9,7 @@ import {
   defaultFontSizeMapper,
 } from './defaultMappers';
 
-
 const fill = scaleOrdinal(schemeCategory10);
-
 
 class WordCloud extends Component {
   static propTypes = {
