@@ -11,6 +11,10 @@ import {
 
 const fill = scaleOrdinal(schemeCategory10);
 
+const defaultclickEvent = (word) => {  
+  console.log(word)
+};
+
 class WordCloud extends Component {
   static propTypes = {
     data: PropTypes.arrayOf(PropTypes.shape({
@@ -28,6 +32,7 @@ class WordCloud extends Component {
       PropTypes.func,
     ]),
     fontSizeMapper: PropTypes.func,
+    clickEvent: PropTypes.func,
     rotate: PropTypes.oneOfType([
       PropTypes.number,
       PropTypes.func,
@@ -41,6 +46,7 @@ class WordCloud extends Component {
     font: 'serif',
     fontSizeMapper: defaultFontSizeMapper,
     rotate: 0,
+    clickEvent: defaultclickEvent
   }
 
   componentWillMount() {
@@ -48,7 +54,7 @@ class WordCloud extends Component {
   }
 
   render() {
-    const { data, width, height, padding, font, fontSizeMapper, rotate } = this.props;
+    const { data, width, height, padding, font, fontSizeMapper, rotate, clickEvent } = this.props;
     const wordCounts = data.map(
       text => ({ ...text })
     );
@@ -82,7 +88,10 @@ class WordCloud extends Component {
           .attr('transform',
             d => `translate(${[d.x, d.y]})rotate(${d.rotate})`
           )
-          .text(d => d.text);
+          .text(d => d.text)
+          .on("click", function (d) {
+            clieckEvent(d);
+          });
       });
 
     layout.start();
