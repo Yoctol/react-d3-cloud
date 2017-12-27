@@ -91,9 +91,7 @@ class WordCloud extends Component {
             d => `translate(${[d.x, d.y]})rotate(${d.rotate})`
           )
           .text(d => d.text)
-          .on('click', d => {
-            clickEvent(d);
-          });
+          .on('click', d => clickEvent(d));
       });
 
     layout.start();
