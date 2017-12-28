@@ -8,6 +8,9 @@
         "babel-plugin-transform-remove-debugger",
         "babel-plugin-dev-expression"
       ]
+    },
+    "test": {
+      "presets": ["latest", "react", "stage-0"]
     }
   }
 }

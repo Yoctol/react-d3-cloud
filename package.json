@@ -1,13 +1,13 @@
 {
   "name": "react-d3-cloud",
-  "version": "0.4.1",
+  "version": "0.5.0",
   "description": "a word cloud component using d3-cloud",
   "main": "lib/index.js",
   "scripts": {
     "lint": "eslint .",
     "build": "NODE_ENV=production npm run build:dev",
     "build:dev": "babel src -d lib --ignore __tests__",
-    "test-only": "jest",
+    "test-only": "jest --no-cache",
     "test:watch": "npm run test-only -- --watch",
     "test": "npm run lint && npm run test-only",
     "preversion": "npm test",
@@ -40,24 +40,26 @@
     "babel-preset-stage-0": "^6.22.0",
     "canvas": "^1.6.2",
     "enzyme": "^2.7.0",
-    "eslint": "^3.13.1",
-    "eslint-config-yoctol": "^0.12.0",
-    "eslint-plugin-import": "^2.2.0",
-    "eslint-plugin-jsx-a11y": "^4.0.0",
-    "eslint-plugin-react": "6.10.3",
-    "jest": "^19.0.2",
-    "react": "^15.4.2",
+    "eslint": "^3.19.0",
+    "eslint-config-yoctol": "^0.13.0",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-jsx-a11y": "^5.0.3",
+    "eslint-plugin-react": "7.1.0",
+    "jest": "^20.0.0",
+    "prop-types": "^15.5.10",
+    "react": "^15.6.1",
     "react-addons-test-utils": "^15.4.2",
     "react-dom": "^15.4.2",
     "react-test-renderer": "^15.4.2"
   },
   "dependencies": {
-    "d3": "^4.4.2",
     "d3-cloud": "^1.2.4",
+    "d3-scale": "^1.0.6",
+    "d3-selection": "^1.1.0",
     "react-faux-dom": "^3.0.0"
   },
   "peerDependencies": {
-    "react": "^0.14.0 || ^15.0.0-0"
+    "react": "^0.14.0 || ^15.0.0-0 || ^16.0.0-0"
   },
   "jest": {
     "verbose": true
