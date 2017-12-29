@@ -34,7 +34,7 @@ class WordCloud extends Component {
       PropTypes.func,
     ]),
     fontSizeMapper: PropTypes.func,
-    clickEvent: PropTypes.func,
+    onWordClick: PropTypes.func,
     rotate: PropTypes.oneOfType([
       PropTypes.number,
       PropTypes.func,
@@ -48,7 +48,7 @@ class WordCloud extends Component {
     font: 'serif',
     fontSizeMapper: defaultFontSizeMapper,
     rotate: 0,
-    clickEvent: defaultClickEvent
+    onWordClick: defaultClickEvent
   }
 
   componentWillMount() {
@@ -56,7 +56,7 @@ class WordCloud extends Component {
   }
 
   render() {
-    const { data, width, height, padding, font, fontSizeMapper, rotate, clickEvent } = this.props;
+    const { data, width, height, padding, font, fontSizeMapper, rotate, onWordClick } = this.props;
     const wordCounts = data.map(
       text => ({ ...text })
     );
@@ -91,7 +91,7 @@ class WordCloud extends Component {
             d => `translate(${[d.x, d.y]})rotate(${d.rotate})`
           )
           .text(d => d.text)
-          .on('click', d => clickEvent(d));
+          .on('click', d => onWordClick(d));
       });
 
     layout.start();

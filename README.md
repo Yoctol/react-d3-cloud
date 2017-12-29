@@ -56,7 +56,7 @@ fontSizeMapper | Map each element of `data` to font size (px) | Function: `(word
 rotate | Map each element of `data` to font rotation degree. Or simply provide a number for global rotation. (degree) | Function \| number | | 0
 padding | Map each element of `data` to font padding. Or simply provide a number for global padding. (px) | Function \| number | | 5
 font | The font of text shown | Function \| string | | serif
-clickEvent | Function called when clicking in a word | Function: `word => clickEvent(word)` | | `console.log(word)`
+onWordClick | Function called when clicking in a word | Function: `word => onWordClick(word)` | | `console.log(word)`
 
 
 ## Build
