@@ -14,6 +14,7 @@ exports[`index.js should contain all words 1`] = `
       transform="translate(350,300)"
     >
       <text
+        onClick={[Function]}
         style={
           Object {
             "fill": "#1f77b4",
@@ -27,6 +28,7 @@ exports[`index.js should contain all words 1`] = `
         lol
       </text>
       <text
+        onClick={[Function]}
         style={
           Object {
             "fill": "#ff7f0e",
@@ -40,6 +42,7 @@ exports[`index.js should contain all words 1`] = `
         duck
       </text>
       <text
+        onClick={[Function]}
         style={
           Object {
             "fill": "#2ca02c",
