@@ -10,7 +10,8 @@ import {
 } from './defaultMappers';
 
 
-const fill = scaleOrdinal(schemeCategory10);
+const ordinalScale = scaleOrdinal(schemeCategory10)
+const defaultFillMapper = (d, i) => ordinalScale(i);
 
 const defaultClickEvent = word => {
   // eslint-disable-next-line no-console
@@ -34,7 +35,7 @@ class WordCloud extends Component {
       PropTypes.func,
     ]),
     fontSizeMapper: PropTypes.func,
-    onWordClick: PropTypes.func,
+    fontFillMapper: PropTypes.func,
     rotate: PropTypes.oneOfType([
       PropTypes.number,
       PropTypes.func,
@@ -47,6 +48,7 @@ class WordCloud extends Component {
     padding: 5,
     font: 'serif',
     fontSizeMapper: defaultFontSizeMapper,
+    fontFillMapper: defaultFillMapper,
     rotate: 0,
     onWordClick: defaultClickEvent
   }
@@ -56,7 +58,8 @@ class WordCloud extends Component {
   }
 
   render() {
-    const { data, width, height, padding, font, fontSizeMapper, rotate, onWordClick } = this.props;
+    const { data, width, height, padding, font, 
+      fontSizeMapper, fontFillMapper, rotate, onWordClick } = this.props;
     const wordCounts = data.map(
       text => ({ ...text })
     );
@@ -85,7 +88,7 @@ class WordCloud extends Component {
           .append('text')
           .style('font-size', d => `${d.size}px`)
           .style('font-family', font)
-          .style('fill', (d, i) => fill(i))
+          .style('fill', fontFillMapper)
           .attr('text-anchor', 'middle')
           .attr('transform',
             d => `translate(${[d.x, d.y]})rotate(${d.rotate})`
