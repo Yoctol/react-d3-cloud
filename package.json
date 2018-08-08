@@ -38,7 +38,7 @@
     "babel-preset-react": "^6.22.0",
     "babel-preset-react-optimize": "^1.0.1",
     "babel-preset-stage-0": "^6.22.0",
-    "canvas": "^1.6.2",
+    "canvas": "^1.6.11",
     "enzyme": "^2.7.0",
     "eslint": "^3.19.0",
     "eslint-config-yoctol": "^0.13.0",

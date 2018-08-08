@@ -1,1 +1,3 @@
-export defaultFontSizeMapper from './defaultFontSizeMapper';
+import defaultFontSizeMapper from './defaultFontSizeMapper';
+
+module.exports.defaultFontSizeMapper = defaultFontSizeMapper;

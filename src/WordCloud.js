@@ -1,5 +1,4 @@
-import { Component } from 'react';
-import PropTypes from 'prop-types';
+import { Component, PropTypes } from 'react';
 import ReactFauxDom from 'react-faux-dom';
 import { select } from 'd3-selection';
 import { scaleOrdinal, schemeCategory10 } from 'd3-scale';
@@ -10,7 +9,7 @@ import {
 } from './defaultMappers';
 
 
-const ordinalScale = scaleOrdinal(schemeCategory10)
+const ordinalScale = scaleOrdinal(schemeCategory10);
 const defaultFillMapper = (d, i) => ordinalScale(i);
 
 const defaultClickEvent = word => {
@@ -40,6 +39,7 @@ class WordCloud extends Component {
       PropTypes.number,
       PropTypes.func,
     ]),
+    onWordClick: PropTypes.func
   }
 
   static defaultProps = {
@@ -58,7 +58,7 @@ class WordCloud extends Component {
   }
 
   render() {
-    const { data, width, height, padding, font, 
+    const { data, width, height, padding, font,
       fontSizeMapper, fontFillMapper, rotate, onWordClick } = this.props;
     const wordCounts = data.map(
       text => ({ ...text })
