@@ -69,10 +69,22 @@ npm run build
 
 ### pre-install
 
+#### Mac OS X
+
 ```sh
+brew install pkg-config cairo pango libpng jpeg giflib librsvg
+npm install
+```
+
+#### Ubuntu and other Debian based systems
+
+```sh
+sudo apt-get update
 sudo apt-get install libcairo2-dev libjpeg8-dev libpango1.0-dev libgif-dev build-essential g++
 npm install
 ```
+
+For more details, please check out [Installation guides](https://github.com/Automattic/node-canvas/wiki) at node-canvas wiki.
 
 ### Run test
 
