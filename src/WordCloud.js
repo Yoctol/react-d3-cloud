@@ -2,7 +2,8 @@ import PropTypes from 'prop-types';
 import ReactFauxDom from 'react-faux-dom';
 import cloud from 'd3-cloud';
 import { Component } from 'react';
-import { scaleOrdinal, schemeCategory10 } from 'd3-scale';
+import { scaleOrdinal } from 'd3-scale';
+import { schemeCategory10 } from 'd3-scale-chromatic';
 import { select } from 'd3-selection';
 
 import { defaultFontSizeMapper } from './defaultMappers';
