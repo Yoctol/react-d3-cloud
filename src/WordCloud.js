@@ -10,11 +10,6 @@ import { defaultFontSizeMapper } from './defaultMappers';
 
 const fill = scaleOrdinal(schemeCategory10);
 
-const defaultClickEvent = word => {
-  // eslint-disable-next-line no-console
-  console.log(word);
-};
-
 class WordCloud extends Component {
   static propTypes = {
     data: PropTypes.arrayOf(
@@ -39,7 +34,7 @@ class WordCloud extends Component {
     font: 'serif',
     fontSizeMapper: defaultFontSizeMapper,
     rotate: 0,
-    onWordClick: defaultClickEvent,
+    onWordClick: () => {},
   };
 
   componentWillMount() {
@@ -92,7 +87,7 @@ class WordCloud extends Component {
           .attr('text-anchor', 'middle')
           .attr('transform', d => `translate(${[d.x, d.y]})rotate(${d.rotate})`)
           .text(d => d.text)
-          .on('click', d => onWordClick(d));
+          .on('click', onWordClick);
       });
 
     layout.start();
