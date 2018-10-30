@@ -52,7 +52,6 @@ class WordCloud extends Component {
       rotate,
       onWordClick,
     } = this.props;
-    const wordCounts = data.map(text => ({ ...text }));
 
     // clear old words
     select(this.wordCloud)
@@ -63,7 +62,7 @@ class WordCloud extends Component {
     const layout = cloud()
       .size([width, height])
       .font(font)
-      .words(wordCounts)
+      .words(data)
       .padding(padding)
       .rotate(rotate)
       .fontSize(fontSizeMapper)
