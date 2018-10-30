@@ -24,6 +24,8 @@ class WordCloud extends Component {
     font: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
     fontSizeMapper: PropTypes.func,
     onWordClick: PropTypes.func,
+    onWordMouseOver: PropTypes.func,
+    onWordMouseOut: PropTypes.func,
     rotate: PropTypes.oneOfType([PropTypes.number, PropTypes.func]),
   };
 
@@ -34,7 +36,9 @@ class WordCloud extends Component {
     font: 'serif',
     fontSizeMapper: defaultFontSizeMapper,
     rotate: 0,
-    onWordClick: () => {},
+    onWordClick: null,
+    onWordMouseOver: null,
+    onWordMouseOut: null,
   };
 
   componentWillMount() {
@@ -51,6 +55,8 @@ class WordCloud extends Component {
       fontSizeMapper,
       rotate,
       onWordClick,
+      onWordMouseOver,
+      onWordMouseOut,
     } = this.props;
     const wordCounts = data.map(text => ({ ...text }));
 
@@ -68,7 +74,7 @@ class WordCloud extends Component {
       .rotate(rotate)
       .fontSize(fontSizeMapper)
       .on('end', words => {
-        select(this.wordCloud)
+        const texts = select(this.wordCloud)
           .append('svg')
           .attr('width', layout.size()[0])
           .attr('height', layout.size()[1])
@@ -86,8 +92,17 @@ class WordCloud extends Component {
           .style('fill', (d, i) => fill(i))
           .attr('text-anchor', 'middle')
           .attr('transform', d => `translate(${[d.x, d.y]})rotate(${d.rotate})`)
-          .text(d => d.text)
-          .on('click', onWordClick);
+          .text(d => d.text);
+
+        if (onWordClick) {
+          texts.on('click', onWordClick);
+        }
+        if (onWordMouseOver) {
+          texts.on('mouseover', onWordMouseOver);
+        }
+        if (onWordMouseOut) {
+          texts.on('mouseout', onWordMouseOut);
+        }
       });
 
     layout.start();
