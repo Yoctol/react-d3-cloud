@@ -16,6 +16,7 @@
   "scripts": {
     "build": "cross-env NODE_ENV=production npm run build:dev",
     "build:dev": "babel src -d lib --ignore __tests__",
+    "deploy": "gh-pages -d demo -b gh-pages -m 'Auto-generated commit [ci skip]'",
     "lint": "eslint .",
     "lint:fix": "npm run lint -- --fix",
     "lint:staged": "lint-staged",
@@ -55,6 +56,7 @@
     "eslint-plugin-prettier": "^3.0.0",
     "eslint-plugin-react": "7.11.1",
     "eslint-plugin-sort-imports-es6-autofix": "^0.3.0",
+    "gh-pages": "^2.0.1",
     "husky": "^1.1.2",
     "jest": "^23.6.0",
     "lint-staged": "^7.3.0",
