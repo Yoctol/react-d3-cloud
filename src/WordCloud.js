@@ -18,15 +18,15 @@ class WordCloud extends Component {
         value: PropTypes.number.isRequired,
       })
     ).isRequired,
-    width: PropTypes.number,
-    height: PropTypes.number,
-    padding: PropTypes.oneOfType([PropTypes.number, PropTypes.func]),
     font: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
     fontSizeMapper: PropTypes.func,
-    onWordClick: PropTypes.func,
-    onWordMouseOver: PropTypes.func,
-    onWordMouseOut: PropTypes.func,
+    height: PropTypes.number,
+    padding: PropTypes.oneOfType([PropTypes.number, PropTypes.func]),
     rotate: PropTypes.oneOfType([PropTypes.number, PropTypes.func]),
+    width: PropTypes.number,
+    onWordClick: PropTypes.func,
+    onWordMouseOut: PropTypes.func,
+    onWordMouseOver: PropTypes.func,
   };
 
   static defaultProps = {

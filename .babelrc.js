@@ -1,12 +1,12 @@
 module.exports = {
-  "presets": ["@babel/preset-env", "@babel/preset-react"],
-  "plugins": [
-    "@babel/plugin-proposal-class-properties",
-    "@babel/plugin-proposal-object-rest-spread"
+  presets: ['@babel/preset-env', '@babel/preset-react'],
+  plugins: [
+    '@babel/plugin-proposal-class-properties',
+    '@babel/plugin-proposal-object-rest-spread',
   ],
-  "env": {
-    "production": {
-      "ignore": [/__tests__/]
-    }
-  }
-}
+  env: {
+    production: {
+      ignore: [/__tests__/],
+    },
+  },
+};
