@@ -1,10 +1,10 @@
 import PropTypes from 'prop-types';
-import ReactFauxDom from 'react-faux-dom';
+import React, { Component } from 'react';
 import cloud from 'd3-cloud';
-import { Component } from 'react';
 import { scaleOrdinal } from 'd3-scale';
 import { schemeCategory10 } from 'd3-scale-chromatic';
 import { select } from 'd3-selection';
+import { withFauxDOM } from 'react-faux-dom';
 
 import { defaultFontSizeMapper } from './defaultMappers';
 
@@ -27,6 +27,10 @@ class WordCloud extends Component {
     onWordMouseOver: PropTypes.func,
     onWordMouseOut: PropTypes.func,
     rotate: PropTypes.oneOfType([PropTypes.number, PropTypes.func]),
+    connectFauxDOM: PropTypes.func.isRequired,
+    animateFauxDOM: PropTypes.func.isRequired,
+    animateDuration: PropTypes.number,
+    chart: PropTypes.node.isRequired,
   };
 
   static defaultProps = {
@@ -36,16 +40,26 @@ class WordCloud extends Component {
     font: 'serif',
     fontSizeMapper: defaultFontSizeMapper,
     rotate: 0,
+    animateDuration: 800,
     onWordClick: null,
     onWordMouseOver: null,
     onWordMouseOut: null,
   };
 
-  componentWillMount() {
-    this.wordCloud = ReactFauxDom.createElement('div');
+  componentDidMount() {
+    this.renderWordCloud();
   }
 
-  render() {
+  componentDidUpdate(prevProps) {
+    const { data } = this.props;
+    // do not compare props.chart as it gets updated in renderWordCloud()
+    // FIXME: when should we update it?
+    if (data !== prevProps.data) {
+      this.renderWordCloud();
+    }
+  }
+
+  renderWordCloud() {
     const {
       data,
       width,
@@ -54,15 +68,17 @@ class WordCloud extends Component {
       font,
       fontSizeMapper,
       rotate,
+      animateDuration,
       onWordClick,
       onWordMouseOver,
       onWordMouseOut,
+
+      // From withFauxDOM
+      animateFauxDOM,
+      connectFauxDOM,
     } = this.props;
 
-    // clear old words
-    select(this.wordCloud)
-      .selectAll('*')
-      .remove();
+    const faux = connectFauxDOM('div', 'chart');
 
     // render based on new data
     const layout = cloud()
@@ -73,7 +89,7 @@ class WordCloud extends Component {
       .rotate(rotate)
       .fontSize(fontSizeMapper)
       .on('end', words => {
-        const texts = select(this.wordCloud)
+        const texts = select(faux)
           .append('svg')
           .attr('width', layout.size()[0])
           .attr('height', layout.size()[1])
@@ -94,20 +110,35 @@ class WordCloud extends Component {
           .text(d => d.text);
 
         if (onWordClick) {
-          texts.on('click', onWordClick);
+          texts.on('click', function(d, i) {
+            onWordClick.call(this, d, i);
+            animateFauxDOM(animateDuration);
+          });
         }
         if (onWordMouseOver) {
-          texts.on('mouseover', onWordMouseOver);
+          texts.on('mouseover', function(d, i) {
+            onWordMouseOver.call(this, d, i);
+            animateFauxDOM(animateDuration);
+          });
         }
         if (onWordMouseOut) {
-          texts.on('mouseout', onWordMouseOut);
+          texts.on('mouseout', function(d, i) {
+            onWordMouseOut.call(this, d, i);
+            animateFauxDOM(animateDuration);
+          });
         }
       });
 
     layout.start();
 
-    return this.wordCloud.toReact();
+    animateFauxDOM(animateDuration);
+  }
+
+  render() {
+    const { chart } = this.props;
+
+    return <div>{chart}</div>;
   }
 }
 
-export default WordCloud;
+export default withFauxDOM(WordCloud);
