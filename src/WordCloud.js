@@ -8,7 +8,8 @@ import { select } from 'd3-selection';
 
 import { defaultFontSizeMapper } from './defaultMappers';
 
-const fill = scaleOrdinal(schemeCategory10);
+const ordinalScale = scaleOrdinal(schemeCategory10);
+const defaultFillMapper = (d, i) => ordinalScale(i);
 
 class WordCloud extends Component {
   static propTypes = {
@@ -19,6 +20,7 @@ class WordCloud extends Component {
       })
     ).isRequired,
     font: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
+    fontFillMapper: PropTypes.func,
     fontSizeMapper: PropTypes.func,
     height: PropTypes.number,
     padding: PropTypes.oneOfType([PropTypes.number, PropTypes.func]),
@@ -35,6 +37,7 @@ class WordCloud extends Component {
     padding: 5,
     font: 'serif',
     fontSizeMapper: defaultFontSizeMapper,
+    fontFillMapper: defaultFillMapper,
     rotate: 0,
     onWordClick: null,
     onWordMouseOver: null,
@@ -53,6 +56,7 @@ class WordCloud extends Component {
       padding,
       font,
       fontSizeMapper,
+      fontFillMapper,
       rotate,
       onWordClick,
       onWordMouseOver,
@@ -88,7 +92,7 @@ class WordCloud extends Component {
           .append('text')
           .style('font-size', d => `${d.size}px`)
           .style('font-family', font)
-          .style('fill', (d, i) => fill(i))
+          .style('fill', fontFillMapper)
           .attr('text-anchor', 'middle')
           .attr('transform', d => `translate(${[d.x, d.y]})rotate(${d.rotate})`)
           .text(d => d.text);
