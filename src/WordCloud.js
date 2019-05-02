@@ -1,4 +1,3 @@
-import { Component } from 'react';
 import PropTypes from 'prop-types';
 import ReactFauxDom from 'react-faux-dom';
 import cloud from 'd3-cloud';
@@ -21,6 +20,7 @@ class WordCloud extends Component {
       })
     ).isRequired,
     font: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
+    fontFillMapper: PropTypes.func,
     fontSizeMapper: PropTypes.func,
     height: PropTypes.number,
     padding: PropTypes.oneOfType([PropTypes.number, PropTypes.func]),
@@ -29,7 +29,6 @@ class WordCloud extends Component {
     onWordClick: PropTypes.func,
     onWordMouseOut: PropTypes.func,
     onWordMouseOver: PropTypes.func,
-    fontFillMapper: PropTypes.func,
   };
 
   static defaultProps = {

@@ -22,11 +22,8 @@ it('should call custom rotater', () => {
   expect(rotate).toHaveBeenCalledTimes(data.length);
 });
 
-
 it('should add a custom color', () => {
   const fontFill = jest.fn().mockReturnValue('blue');
-  renderer.create(
-    <WordCloud data={data} fontFillMapper={fontFill} />
-  );
+  renderer.create(<WordCloud data={data} fontFillMapper={fontFill} />);
   expect(fontFill.mock.calls.length).toBeGreaterThan(1);
 });
