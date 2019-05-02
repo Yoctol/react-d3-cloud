@@ -4,8 +4,4 @@ test/
 .eslintrc.js
 .eslintignore
 .gitignore
-hello.txt
-hello_parse.txt
-parse_hello.py
 demo
-index.html
