@@ -15,28 +15,24 @@ npm install react-d3-cloud
 ```
 
 ```jsx
-import React from 'react';
-import { render } from 'react-dom';
-import WordCloud from 'react-d3-cloud';
+import React from "react";
+import { render } from "react-dom";
+import WordCloud from "react-d3-cloud";
 
 const data = [
-  { text: 'Hey', value: 1000 },
-  { text: 'lol', value: 200 },
-  { text: 'first impression', value: 800 },
-  { text: 'very cool', value: 1000000 },
-  { text: 'duck', value: 10 },
+  { text: "Hey", value: 1000 },
+  { text: "lol", value: 200 },
+  { text: "first impression", value: 800 },
+  { text: "very cool", value: 1000000 },
+  { text: "duck", value: 10 }
 ];
 
 const fontSizeMapper = word => Math.log2(word.value) * 5;
 const rotate = word => word.value % 360;
 
 render(
-  <WordCloud
-    data={data}
-    fontSizeMapper={fontSizeMapper}
-    rotate={rotate}
-  />,
-  document.getElementById('root')
+  <WordCloud data={data} fontSizeMapper={fontSizeMapper} rotate={rotate} />,
+  document.getElementById("root")
 );
 ```
 
@@ -44,20 +40,20 @@ Please checkout [demo](https://yoctol.github.com/react-d3-cloud)
 
 for more detailed props, please refer to below:
 
-
 ## Props
 
-name | description | type | required | default
------|-------------|------|----------|--------
-data | The input data for rendering | Array<{ text: string, value: number }>  | ✓ |
-width | Width of component (px) | number | | 700
-height | Height of component (px) | number | | 600
-fontSizeMapper | Map each element of `data` to font size (px) | Function: `(word: string, idx: number): number` | | `word => word.value;`
-rotate | Map each element of `data` to font rotation degree. Or simply provide a number for global rotation. (degree) | Function \| number | | 0
-padding | Map each element of `data` to font padding. Or simply provide a number for global padding. (px) | Function \| number | | 5
-font | The font of text shown | Function \| string | | serif
-onWordClick | Function called when clicking in a word | Function: `word => onWordClick(word)` | | `console.log(word)`
-
+| name            | description                                                                                                  | type                                            | required | default               |
+| --------------- | ------------------------------------------------------------------------------------------------------------ | ----------------------------------------------- | -------- | --------------------- |
+| data            | The input data for rendering                                                                                 | Array<{ text: string, value: number }>          | ✓        |
+| width           | Width of component (px)                                                                                      | number                                          |          | 700                   |
+| height          | Height of component (px)                                                                                     | number                                          |          | 600                   |
+| fontSizeMapper  | Map each element of `data` to font size (px)                                                                 | Function: `(word: string, idx: number): number` |          | `word => word.value;` |
+| rotate          | Map each element of `data` to font rotation degree. Or simply provide a number for global rotation. (degree) | Function \| number                              |          | 0                     |
+| padding         | Map each element of `data` to font padding. Or simply provide a number for global padding. (px)              | Function \| number                              |          | 5                     |
+| font            | The font of text shown                                                                                       | Function \| string                              |          | serif                 |
+| onWordClick     | Function called when click event triggered on a word                                                         | Function: `word => {}`                          |          | null                  |
+| onWordMouseOver | Function called when mouseover event triggered on a word                                                     | Function: `word => {}`                          |          | null                  |
+| onWordMouseOut  | Function called when mouseout event triggered on a word                                                      | Function: `word => {}`                          |          | null                  |
 
 ## Build
 
@@ -69,10 +65,22 @@ npm run build
 
 ### pre-install
 
+#### Mac OS X
+
 ```sh
+brew install pkg-config cairo pango libpng jpeg giflib librsvg
+npm install
+```
+
+#### Ubuntu and other Debian based systems
+
+```sh
+sudo apt-get update
 sudo apt-get install libcairo2-dev libjpeg8-dev libpango1.0-dev libgif-dev build-essential g++
 npm install
 ```
+
+For more details, please check out [Installation guides](https://github.com/Automattic/node-canvas/wiki) at node-canvas wiki.
 
 ### Run test
 
