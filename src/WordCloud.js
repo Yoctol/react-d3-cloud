@@ -41,7 +41,7 @@ class WordCloud extends Component {
     onWordMouseOut: null,
   };
 
-  componentWillMount() {
+  UNSAFE_componentWillMount() {
     this.wordCloud = ReactFauxDom.createElement('div');
   }
 
