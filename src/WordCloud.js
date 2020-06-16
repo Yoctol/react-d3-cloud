@@ -41,6 +41,7 @@ class WordCloud extends Component {
     onWordMouseOut: null,
   };
 
+  // eslint-disable-next-line camelcase
   UNSAFE_componentWillMount() {
     this.wordCloud = ReactFauxDom.createElement('div');
   }
