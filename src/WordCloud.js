@@ -11,36 +11,6 @@ import { defaultFontSizeMapper } from './defaultMappers';
 const fill = scaleOrdinal(schemeCategory10);
 
 class WordCloud extends Component {
-  static propTypes = {
-    data: PropTypes.arrayOf(
-      PropTypes.shape({
-        text: PropTypes.string.isRequired,
-        value: PropTypes.number.isRequired,
-      })
-    ).isRequired,
-    font: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
-    fontSizeMapper: PropTypes.func,
-    height: PropTypes.number,
-    padding: PropTypes.oneOfType([PropTypes.number, PropTypes.func]),
-    rotate: PropTypes.oneOfType([PropTypes.number, PropTypes.func]),
-    width: PropTypes.number,
-    onWordClick: PropTypes.func,
-    onWordMouseOut: PropTypes.func,
-    onWordMouseOver: PropTypes.func,
-  };
-
-  static defaultProps = {
-    width: 700,
-    height: 600,
-    padding: 5,
-    font: 'serif',
-    fontSizeMapper: defaultFontSizeMapper,
-    rotate: 0,
-    onWordClick: null,
-    onWordMouseOver: null,
-    onWordMouseOut: null,
-  };
-
   componentWillMount() {
     this.wordCloud = ReactFauxDom.createElement('div');
   }
@@ -109,5 +79,35 @@ class WordCloud extends Component {
     return this.wordCloud.toReact();
   }
 }
+
+WordCloud.propTypes = {
+  data: PropTypes.arrayOf(
+    PropTypes.shape({
+      text: PropTypes.string.isRequired,
+      value: PropTypes.number.isRequired,
+    })
+  ).isRequired,
+  font: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
+  fontSizeMapper: PropTypes.func,
+  height: PropTypes.number,
+  padding: PropTypes.oneOfType([PropTypes.number, PropTypes.func]),
+  rotate: PropTypes.oneOfType([PropTypes.number, PropTypes.func]),
+  width: PropTypes.number,
+  onWordClick: PropTypes.func,
+  onWordMouseOut: PropTypes.func,
+  onWordMouseOver: PropTypes.func,
+};
+
+WordCloud.defaultProps = {
+  width: 700,
+  height: 600,
+  padding: 5,
+  font: 'serif',
+  fontSizeMapper: defaultFontSizeMapper,
+  rotate: 0,
+  onWordClick: null,
+  onWordMouseOver: null,
+  onWordMouseOut: null,
+};
 
 export default WordCloud;
