@@ -30,9 +30,7 @@ class WordCloud extends Component {
     } = this.props;
 
     // clear old words
-    select(this.wordCloud)
-      .selectAll('*')
-      .remove();
+    select(this.wordCloud).selectAll('*').remove();
 
     // render based on new data
     const layout = cloud()
@@ -42,7 +40,7 @@ class WordCloud extends Component {
       .padding(padding)
       .rotate(rotate)
       .fontSize(fontSizeMapper)
-      .on('end', words => {
+      .on('end', (words) => {
         const texts = select(this.wordCloud)
           .append('svg')
           .attr('width', layout.size()[0])
@@ -56,12 +54,15 @@ class WordCloud extends Component {
           .data(words)
           .enter()
           .append('text')
-          .style('font-size', d => `${d.size}px`)
+          .style('font-size', (d) => `${d.size}px`)
           .style('font-family', font)
           .style('fill', (d, i) => fill(i))
           .attr('text-anchor', 'middle')
-          .attr('transform', d => `translate(${[d.x, d.y]})rotate(${d.rotate})`)
-          .text(d => d.text);
+          .attr(
+            'transform',
+            (d) => `translate(${[d.x, d.y]})rotate(${d.rotate})`
+          )
+          .text((d) => d.text);
 
         if (onWordClick) {
           texts.on('click', onWordClick);
