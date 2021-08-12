@@ -1,8 +1,7 @@
 # react-d3-cloud
 
-[![NPM version][npm-image]][npm-url]
-[![Build Status][travis-image]][travis-url]
-[![Dependency Status][david_img]][david_site]
+[![npm version](https://badge.fury.io/js/react-d3-cloud.svg)](https://badge.fury.io/js/react-d3-cloud)
+[![Build Status](https://github.com/Yoctol/react-d3-cloud/workflows/CI/badge.svg?branch=master)](https://github.com/Yoctol/react-d3-cloud/actions?query=branch%3Amaster)
 
 A word cloud react component built with [d3-cloud](https://github.com/jasondavies/d3-cloud).
 
@@ -24,11 +23,11 @@ const data = [
   { text: "lol", value: 200 },
   { text: "first impression", value: 800 },
   { text: "very cool", value: 1000000 },
-  { text: "duck", value: 10 }
+  { text: "duck", value: 10 },
 ];
 
-const fontSizeMapper = word => Math.log2(word.value) * 5;
-const rotate = word => word.value % 360;
+const fontSizeMapper = (word) => Math.log2(word.value) * 5;
+const rotate = (word) => word.value % 360;
 
 render(
   <WordCloud data={data} fontSizeMapper={fontSizeMapper} rotate={rotate} />,
@@ -91,10 +90,3 @@ npm test
 ## License
 
 MIT © [Yoctol](https://github.com/Yoctol/react-d3-cloud)
-
-[npm-image]: https://img.shields.io/npm/v/react-d3-cloud.svg?style=flat-square
-[npm-url]: https://npmjs.org/package/react-d3-cloud
-[travis-image]: https://travis-ci.org/Yoctol/react-d3-cloud.svg?branch=master
-[travis-url]: https://travis-ci.org/Yoctol/react-d3-cloud
-[david_img]: https://david-dm.org/Yoctol/react-d3-cloud.svg
-[david_site]: https://david-dm.org/Yoctol/react-d3-cloud
