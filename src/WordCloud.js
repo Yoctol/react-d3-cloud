@@ -6,8 +6,6 @@ import { schemeCategory10 } from 'd3-scale-chromatic';
 import { select } from 'd3-selection';
 import { useRef } from 'react';
 
-import { defaultFontSizeMapper } from './defaultMappers';
-
 const fill = scaleOrdinal(schemeCategory10);
 
 function WordCloud(props) {
@@ -23,10 +21,14 @@ function WordCloud(props) {
     data,
     width,
     height,
-    padding,
     font,
-    fontSizeMapper,
+    fontStyle,
+    fontWeight,
+    fontSize,
     rotate,
+    spiral,
+    padding,
+    random,
     onWordClick,
     onWordMouseOver,
     onWordMouseOut,
@@ -37,12 +39,16 @@ function WordCloud(props) {
 
   // render based on new data
   const layout = cloud()
+    .words(data)
     .size([width, height])
     .font(font)
-    .words(data)
-    .padding(padding)
+    .fontStyle(fontStyle)
+    .fontWeight(fontWeight)
+    .fontSize(fontSize)
     .rotate(rotate)
-    .fontSize(fontSizeMapper)
+    .spiral(spiral)
+    .padding(padding)
+    .random(random)
     .on('end', (words) => {
       const texts = select(el)
         .append('svg')
@@ -87,12 +93,16 @@ WordCloud.propTypes = {
       value: PropTypes.number.isRequired,
     })
   ).isRequired,
-  font: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
-  fontSizeMapper: PropTypes.func,
-  height: PropTypes.number,
-  padding: PropTypes.oneOfType([PropTypes.number, PropTypes.func]),
-  rotate: PropTypes.oneOfType([PropTypes.number, PropTypes.func]),
   width: PropTypes.number,
+  height: PropTypes.number,
+  font: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
+  fontStyle: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
+  fontWeight: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
+  fontSize: PropTypes.func,
+  rotate: PropTypes.func,
+  spiral: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
+  padding: PropTypes.oneOfType([PropTypes.number, PropTypes.func]),
+  random: PropTypes.func,
   onWordClick: PropTypes.func,
   onWordMouseOut: PropTypes.func,
   onWordMouseOver: PropTypes.func,
@@ -101,10 +111,15 @@ WordCloud.propTypes = {
 WordCloud.defaultProps = {
   width: 700,
   height: 600,
-  padding: 5,
   font: 'serif',
-  fontSizeMapper: defaultFontSizeMapper,
-  rotate: 0,
+  fontStyle: 'normal',
+  fontWeight: 'normal',
+  fontSize: (d) => Math.sqrt(d.value),
+  // eslint-disable-next-line no-bitwise
+  rotate: () => (~~(Math.random() * 6) - 3) * 30,
+  spiral: 'archimedean',
+  padding: 1,
+  random: Math.random,
   onWordClick: null,
   onWordMouseOver: null,
   onWordMouseOut: null,
