@@ -35,7 +35,7 @@ render(
 );
 ```
 
-Please checkout [demo](https://yoctol.github.com/react-d3-cloud)
+Please checkout [demo](https://yoctol.github.io/react-d3-cloud)
 
 for more detailed props, please refer to below:
 
