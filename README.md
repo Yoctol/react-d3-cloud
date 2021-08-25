@@ -26,11 +26,11 @@ const data = [
   { text: "duck", value: 10 },
 ];
 
-const fontSizeMapper = (word) => Math.log2(word.value) * 5;
+const fontSize = (word) => Math.log2(word.value) * 5;
 const rotate = (word) => word.value % 360;
 
 render(
-  <WordCloud data={data} fontSizeMapper={fontSizeMapper} rotate={rotate} />,
+  <WordCloud data={data} fontSize={fontSize} rotate={rotate} />,
   document.getElementById("root")
 );
 ```
@@ -41,18 +41,22 @@ for more detailed props, please refer to below:
 
 ## Props
 
-| name            | description                                                                                                  | type                                            | required | default               |
-| --------------- | ------------------------------------------------------------------------------------------------------------ | ----------------------------------------------- | -------- | --------------------- |
-| data            | The input data for rendering                                                                                 | Array<{ text: string, value: number }>          | ✓        |
-| width           | Width of component (px)                                                                                      | number                                          |          | 700                   |
-| height          | Height of component (px)                                                                                     | number                                          |          | 600                   |
-| fontSizeMapper  | Map each element of `data` to font size (px)                                                                 | Function: `(word: string, idx: number): number` |          | `word => word.value;` |
-| rotate          | Map each element of `data` to font rotation degree. Or simply provide a number for global rotation. (degree) | Function \| number                              |          | 0                     |
-| padding         | Map each element of `data` to font padding. Or simply provide a number for global padding. (px)              | Function \| number                              |          | 5                     |
-| font            | The font of text shown                                                                                       | Function \| string                              |          | serif                 |
-| onWordClick     | Function called when click event triggered on a word                                                         | Function: `word => {}`                          |          | null                  |
-| onWordMouseOver | Function called when mouseover event triggered on a word                                                     | Function: `word => {}`                          |          | null                  |
-| onWordMouseOut  | Function called when mouseout event triggered on a word                                                      | Function: `word => {}`                          |          | null                  |
+| name               | description                                                                                                                                                                                                              | type                                         | required | default                                  |
+| ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | -------------------------------------------- | -------- | ---------------------------------------- |
+| data               | The words array                                                                                                                                                                                                          | `{ text: string, value: number }>[]`         | ✓        |
+| width              | Width of the layout (px)                                                                                                                                                                                                 | `number`                                     |          | `700`                                    |
+| height             | Height of the layout (px)                                                                                                                                                                                                | `number`                                     |          | `600`                                    |
+| font               | The font accessor function, which indicates the font face for each word. A constant may be specified instead of a function.                                                                                              | `string \| (d) => string`                    |          | `serif`                                  |
+| fontStyle          | The fontStyle accessor function, which indicates the font style for each word. A constant may be specified instead of a function.                                                                                        | `string \| (d) => string`                    |          | `'normal'`                               |
+| fontWeight         | The fontWeight accessor function, which indicates the font weight for each word. A constant may be specified instead of a function.                                                                                      | `string \| (d) => string`                    |          | `'normal'`                               |
+| fontSize           | The fontSize accessor function, which indicates the numerical font size for each word.                                                                                                                                   | `(d) => number`                              |          | `(d) => Math.sqrt(d.value)`              |
+| rotate             | The rotate accessor function, which indicates the rotation angle (in degrees) for each word.                                                                                                                             | `(d) => number`                              |          | `() => (~~(Math.random() * 6) - 3) * 30` |
+| spiral             | The current type of spiral used for positioning words. This can either be one of the two built-in spirals, "archimedean" and "rectangular", or an arbitrary spiral generator can be used                                 | `string \| ([width, height]) => t => [x, y]` |          | `'archimedean'`                          |
+| padding            | The padding accessor function, which indicates the numerical padding for each word.                                                                                                                                      | `number \| (d) => number`                    |          | `1`                                      |
+| random             | The internal random number generator, used for selecting the initial position of each word, and the clockwise/counterclockwise direction of the spiral for each word. This should return a number in the range `[0, 1)`. | `(d) => number`                              |          | `Math.random`                            |
+| onWordClick        | The function will be called when `click` event is triggered on a word                                                                                                                                                    | `word => {}`                                 |          | null                                     |
+| onWorwordMouseOver | The function will be called when `mouseover` event is triggered on a word                                                                                                                                                | `word => {}`                                 |          | null                                     |
+| onWordMouseOut     | The function will be called when `mouseout` event is triggered on a word                                                                                                                                                 | `word => {}`                                 |          | null                                     |
 
 ## Build
 

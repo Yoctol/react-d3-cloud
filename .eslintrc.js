@@ -6,5 +6,7 @@ module.exports = {
     jest: true,
     browser: true,
   },
-  rules: {},
+  rules: {
+    'react/sort-prop-types': 'off',
+  },
 };
