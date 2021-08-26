@@ -25,6 +25,8 @@
     "test": "npm run lint && npm run testonly",
     "testonly": "jest",
     "testonly:watch": "npm run testonly -- --watch",
+    "prettier": "prettier --write --list-different .",
+    "prettier:check": "prettier --check .",
     "preversion": "npm test"
   },
   "dependencies": {

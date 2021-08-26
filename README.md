@@ -14,16 +14,16 @@ npm install react-d3-cloud
 ```
 
 ```jsx
-import React from "react";
-import { render } from "react-dom";
-import WordCloud from "react-d3-cloud";
+import React from 'react';
+import { render } from 'react-dom';
+import WordCloud from 'react-d3-cloud';
 
 const data = [
-  { text: "Hey", value: 1000 },
-  { text: "lol", value: 200 },
-  { text: "first impression", value: 800 },
-  { text: "very cool", value: 1000000 },
-  { text: "duck", value: 10 },
+  { text: 'Hey', value: 1000 },
+  { text: 'lol', value: 200 },
+  { text: 'first impression', value: 800 },
+  { text: 'very cool', value: 1000000 },
+  { text: 'duck', value: 10 },
 ];
 
 const fontSize = (word) => Math.log2(word.value) * 5;
@@ -31,7 +31,7 @@ const rotate = (word) => word.value % 360;
 
 render(
   <WordCloud data={data} fontSize={fontSize} rotate={rotate} />,
-  document.getElementById("root")
+  document.getElementById('root')
 );
 ```
 
@@ -64,7 +64,7 @@ To make `<WordCloud />` work with Server-Side Rendering (SSR), you need to avoid
 
 ```js
 {
-  typeof window !== "undefiend" && <WordCloud data={data} />;
+  typeof window !== 'undefiend' && <WordCloud data={data} />;
 }
 ```
 
