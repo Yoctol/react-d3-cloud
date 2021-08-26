@@ -95,15 +95,13 @@ function WordCloud(props) {
     .padding(padding)
     .random(random)
     .on('end', (words) => {
+      const [w, h] = layout.size();
       const texts = select(el)
         .append('svg')
-        .attr('width', layout.size()[0])
-        .attr('height', layout.size()[1])
+        .attr('viewBox', `0 0 ${w} ${h}`)
+        .attr('preserveAspectRatio', 'xMinYMin meet')
         .append('g')
-        .attr(
-          'transform',
-          `translate(${layout.size()[0] / 2},${layout.size()[1] / 2})`
-        )
+        .attr('transform', `translate(${w / 2},${h / 2})`)
         .selectAll('text')
         .data(words)
         .enter()
