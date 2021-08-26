@@ -1,10 +1,11 @@
 import PropTypes from 'prop-types';
+import React, { useRef } from 'react';
 import ReactFauxDom from 'react-faux-dom';
 import cloud from 'd3-cloud';
+import isDeepEqual from 'react-fast-compare';
 import { scaleOrdinal } from 'd3-scale';
 import { schemeCategory10 } from 'd3-scale-chromatic';
 import { select } from 'd3-selection';
-import { useRef } from 'react';
 
 // From: https://github.com/jasondavies/d3-cloud/blob/4fc1a943d01d270e7838c97bb8ee48ca15da20be/index.js#L355-L378
 function archimedeanSpiral(size) {
@@ -173,4 +174,4 @@ WordCloud.defaultProps = {
   onWordMouseOut: null,
 };
 
-export default WordCloud;
+export default React.memo(WordCloud, isDeepEqual);
