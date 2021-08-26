@@ -7,11 +7,13 @@ A word cloud react component built with [d3-cloud](https://github.com/jasondavie
 
 ![image](https://cloud.githubusercontent.com/assets/6868283/20619528/fa83334c-b32f-11e6-81dd-6fe4fa6c52d9.png)
 
-## Usage
+## Installation
 
 ```sh
 npm install react-d3-cloud
 ```
+
+## Usage
 
 Simple:
 
@@ -100,7 +102,9 @@ for more detailed props, please refer to below:
 | onWordMouseOver | The function will be called when `mouseover` event is triggered on a word                                                                                                                                                | `word => {}`                                 |          | null                                          |
 | onWordMouseOut  | The function will be called when `mouseout` event is triggered on a word                                                                                                                                                 | `word => {}`                                 |          | null                                          |
 
-## Next.js/SSR
+## FAQ
+
+### How to Use with Next.js/SSR
 
 To make `<WordCloud />` work with Server-Side Rendering (SSR), you need to avoid rendering it on the server:
 
@@ -108,6 +112,61 @@ To make `<WordCloud />` work with Server-Side Rendering (SSR), you need to avoid
 {
   typeof window !== 'undefiend' && <WordCloud data={data} />;
 }
+```
+
+### How to Avoid Unnecessary Re-render
+
+As of version 0.10.1, `<WordCloud />` has been wrapped by `React.memo()` and deep equal comparison under the hood to avoid unnecessary re-render. All you need to do is to make your function props deep equal comparable using `useCallback()`:
+
+```js
+import React, { useCallback } from 'react';
+import { render } from 'react-dom';
+import WordCloud from 'react-d3-cloud';
+import { scaleOrdinal } from 'd3-scale';
+import { schemeCategory10 } from 'd3-scale-chromatic';
+
+function App() {
+  const data = [
+    { text: 'Hey', value: 1000 },
+    { text: 'lol', value: 200 },
+    { text: 'first impression', value: 800 },
+    { text: 'very cool', value: 1000000 },
+    { text: 'duck', value: 10 },
+  ];
+
+  const fontSize = useCallback((word) => Math.log2(word.value) * 5, []);
+  const rotate = useCallback((word) => word.value % 360, []);
+  const fill = useCallback((d, i) => scaleOrdinal(schemeCategory10)(i), []);
+  const onWordClick = useCallback((word) => {
+    console.log(`onWordClick: ${word}`);
+  }, []);
+  const onWordMouseOver = useCallback((word) => {
+    console.log(`onWordMouseOver: ${word}`);
+  }, []);
+  const onWordMouseOut = useCallback((word) => {
+    console.log(`onWordMouseOut: ${word}`);
+  }, []);
+
+  return (
+    <WordCloud
+      data={data}
+      width={500}
+      height={500}
+      font="Times"
+      fontStyle="italic"
+      fontWeight="bold"
+      fontSize={fontSize}
+      spiral="rectangular"
+      rotate={rotate}
+      padding={5}
+      random={Math.random}
+      fill={fill}
+      onWordClick={onWordClick}
+      onWordMouseOver={onWordMouseOver}
+      onWordMouseOut={onWordMouseOut}
+    />
+  );
+);
 ```
 
 ## Build
@@ -127,7 +186,7 @@ brew install pkg-config cairo pango libpng jpeg giflib librsvg
 npm install
 ```
 
-#### Ubuntu and other Debian based systems
+#### Ubuntu and Other Debian Based Systems
 
 ```sh
 sudo apt-get update
@@ -137,7 +196,7 @@ npm install
 
 For more details, please check out [Installation guides](https://github.com/Automattic/node-canvas/wiki) at node-canvas wiki.
 
-### Run test
+### Run Tests
 
 ```sh
 npm test
