@@ -8,6 +8,47 @@ import { useRef } from 'react';
 
 const fill = scaleOrdinal(schemeCategory10);
 
+// From: https://github.com/jasondavies/d3-cloud/blob/4fc1a943d01d270e7838c97bb8ee48ca15da20be/index.js#L355-L378
+function archimedeanSpiral(size) {
+  const e = size[0] / size[1];
+  return (t) => {
+    // eslint-disable-next-line no-return-assign, no-param-reassign
+    return [e * (t *= 0.1) * Math.cos(t), t * Math.sin(t)];
+  };
+}
+
+function rectangularSpiral(size) {
+  const dy = 4;
+  const dx = (dy * size[0]) / size[1];
+  let x = 0;
+  let y = 0;
+  return (t) => {
+    const sign = t < 0 ? -1 : 1;
+    // See triangular numbers: T_n = n * (n + 1) / 2.
+    // eslint-disable-next-line no-bitwise
+    switch ((Math.sqrt(1 + 4 * sign * t) - sign) & 3) {
+      case 0:
+        x += dx;
+        break;
+      case 1:
+        y += dy;
+        break;
+      case 2:
+        x -= dx;
+        break;
+      default:
+        y -= dy;
+        break;
+    }
+    return [x, y];
+  };
+}
+
+const spirals = {
+  archimedean: archimedeanSpiral,
+  rectangular: rectangularSpiral,
+};
+
 function WordCloud(props) {
   const elementRef = useRef();
 
@@ -46,7 +87,11 @@ function WordCloud(props) {
     .fontWeight(fontWeight)
     .fontSize(fontSize)
     .rotate(rotate)
-    .spiral(spiral)
+    .spiral(
+      typeof spiral === 'string'
+        ? spirals[spiral] ?? spirals.archimedean
+        : spiral
+    )
     .padding(padding)
     .random(random)
     .on('end', (words) => {
