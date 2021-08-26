@@ -1,14 +1,11 @@
 {
   "name": "react-d3-cloud",
   "version": "0.9.0",
-  "description": "a word cloud component using d3-cloud",
+  "description": "A word cloud component using d3-cloud",
   "license": "MIT",
   "author": "cph",
-  "homepage": "https://github.com/Yoctol/react-d3-cloud#readme",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Yoctol/react-d3-cloud.git"
-  },
+  "homepage": "https://github.com/Yoctol/react-d3-cloud",
+  "repository": "Yoctol/react-d3-cloud",
   "bugs": {
     "url": "https://github.com/Yoctol/react-d3-cloud/issues"
   },
