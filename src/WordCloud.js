@@ -6,8 +6,6 @@ import { schemeCategory10 } from 'd3-scale-chromatic';
 import { select } from 'd3-selection';
 import { useRef } from 'react';
 
-const fill = scaleOrdinal(schemeCategory10);
-
 // From: https://github.com/jasondavies/d3-cloud/blob/4fc1a943d01d270e7838c97bb8ee48ca15da20be/index.js#L355-L378
 function archimedeanSpiral(size) {
   const e = size[0] / size[1];
@@ -70,6 +68,7 @@ function WordCloud(props) {
     spiral,
     padding,
     random,
+    fill,
     onWordClick,
     onWordMouseOver,
     onWordMouseOut,
@@ -112,7 +111,7 @@ function WordCloud(props) {
         .style('font-style', (d) => d.style)
         .style('font-weight', (d) => d.weight)
         .style('font-size', (d) => `${d.size}px`)
-        .style('fill', (d, i) => fill(i))
+        .style('fill', fill)
         .attr('text-anchor', 'middle')
         .attr('transform', (d) => `translate(${[d.x, d.y]})rotate(${d.rotate})`)
         .text((d) => d.text);
@@ -150,6 +149,7 @@ WordCloud.propTypes = {
   spiral: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
   padding: PropTypes.oneOfType([PropTypes.number, PropTypes.func]),
   random: PropTypes.func,
+  fill: PropTypes.func,
   onWordClick: PropTypes.func,
   onWordMouseOut: PropTypes.func,
   onWordMouseOver: PropTypes.func,
@@ -167,6 +167,7 @@ WordCloud.defaultProps = {
   spiral: 'archimedean',
   padding: 1,
   random: Math.random,
+  fill: (d, i) => scaleOrdinal(schemeCategory10)(i),
   onWordClick: null,
   onWordMouseOver: null,
   onWordMouseOut: null,
