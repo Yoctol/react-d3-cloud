@@ -11,8 +11,9 @@
   },
   "main": "lib/index.js",
   "scripts": {
-    "build": "cross-env NODE_ENV=production npm run build:dev",
-    "build:dev": "babel src -d lib --ignore __tests__",
+    "build": "npm run clean && tsc -p tsconfig.build.json",
+    "check": "tsc --noEmit",
+    "clean": "rimraf lib",
     "deploy": "gh-pages -d demo -b gh-pages -m 'Auto-generated commit [ci skip]'",
     "lint": "eslint .",
     "lint:fix": "npm run lint -- --fix",
@@ -26,6 +27,7 @@
     "prettier:check": "prettier --check .",
     "preversion": "npm test"
   },
+  "types": "lib/index.d.ts",
   "dependencies": {
     "d3-cloud": "^1.2.5",
     "d3-scale": "^3.3.0",
@@ -44,7 +46,20 @@
     "@babel/core": "^7.15.0",
     "@babel/preset-env": "^7.15.0",
     "@babel/preset-react": "^7.14.5",
+    "@babel/preset-typescript": "^7.15.0",
+    "@types/d3-cloud": "^1.2.5",
+    "@types/d3-scale": "^4.0.1",
+    "@types/d3-scale-chromatic": "^3.0.0",
+    "@types/d3-selection": "^3.0.1",
+    "@types/enzyme": "^3.10.9",
+    "@types/jest": "^27.0.1",
+    "@types/react": "^17.0.19",
+    "@types/react-faux-dom": "^4.1.5",
+    "@types/react-test-renderer": "^17.0.1",
+    "@typescript-eslint/eslint-plugin": "^4.29.3",
+    "@typescript-eslint/parser": "^4.29.3",
     "babel-eslint": "^10.1.0",
+    "babel-plugin-typescript-to-proptypes": "^1.4.2",
     "canvas": "^2.8.0",
     "cross-env": "^7.0.3",
     "enzyme": "^3.11.0",
@@ -65,7 +80,9 @@
     "prettier-package-json": "^2.6.0",
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
-    "react-test-renderer": "^16.14.0"
+    "react-test-renderer": "^16.14.0",
+    "rimraf": "^3.0.2",
+    "typescript": "^4.4.2"
   },
   "keywords": [
     "d3",

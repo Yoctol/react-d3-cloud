@@ -28,6 +28,9 @@ jobs:
       - name: Lint ESLint
         run: npm run lint
 
+      - name: Type Check
+        run: npm run check
+
   test:
     name: Run tests on Node v${{ matrix.node_version_to_setup }}
     runs-on: ubuntu-latest

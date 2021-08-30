@@ -1,8 +1,8 @@
 module.exports = {
-  presets: ['@babel/preset-env', '@babel/preset-react'],
-  env: {
-    production: {
-      ignore: [/__tests__/],
-    },
-  },
+  presets: [
+    '@babel/preset-env',
+    '@babel/preset-react',
+    '@babel/preset-typescript',
+  ],
+  plugins: ['babel-plugin-typescript-to-proptypes'],
 };

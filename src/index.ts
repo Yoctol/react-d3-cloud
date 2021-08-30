@@ -1,3 +1,3 @@
 import WordCloud from './WordCloud';
 
-module.exports = WordCloud;
+export default WordCloud;
