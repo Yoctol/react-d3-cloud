@@ -7,7 +7,7 @@ module.exports = {
   parser: '@typescript-eslint/parser',
   extends: [
     'yoctol',
-    // 'plugin:import/typescript',
+    'plugin:import/typescript',
     'plugin:@typescript-eslint/recommended',
   ],
   env: {
