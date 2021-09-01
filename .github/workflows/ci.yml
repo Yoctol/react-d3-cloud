@@ -28,12 +28,15 @@ jobs:
       - name: Lint ESLint
         run: npm run lint
 
+      - name: Type Check
+        run: npm run check
+
   test:
     name: Run tests on Node v${{ matrix.node_version_to_setup }}
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node_version_to_setup: [10, 12, 14, 16]
+        node_version_to_setup: [12, 14, 16]
     steps:
       - name: Checkout repo
         uses: actions/checkout@v2
