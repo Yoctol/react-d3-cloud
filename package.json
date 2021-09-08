@@ -11,7 +11,9 @@
   },
   "main": "lib/index.js",
   "scripts": {
-    "build": "npm run clean && tsc -p tsconfig.build.json",
+    "build": "npm run clean && npm run build:cjs && npm run build:esm",
+    "build:cjs": "babel src -d lib --extensions '.ts,.tsx' --ignore '**/__tests__/**' && tsc -p tsconfig.build.json -m commonjs --emitDeclarationOnly",
+    "build:esm": "cross-env ESM=true babel src -d lib/esm --extensions '.ts,.tsx' --ignore '**/__tests__/**' && tsc -p tsconfig.build.json -m esnext --emitDeclarationOnly --outDir lib/esm",
     "check": "tsc --noEmit",
     "clean": "rimraf lib",
     "deploy": "gh-pages -d demo -b gh-pages -m 'Auto-generated commit [ci skip]'",
@@ -88,5 +90,9 @@
     "d3",
     "react",
     "word-cloud"
-  ]
+  ],
+  "exports": {
+    "import": "./esm/index.js",
+    "require": "./index.js"
+  }
 }
