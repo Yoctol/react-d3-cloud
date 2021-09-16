@@ -53,7 +53,9 @@ function WordCloud({
   spiral = 'archimedean',
   padding = 1,
   random = Math.random,
-  fill = (_, i) => scaleOrdinal(schemeCategory10)(String(i)),
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore The ordinal function should accept number
+  fill = (_, i) => scaleOrdinal(schemeCategory10)(i),
   onWordClick,
   onWordMouseOver,
   onWordMouseOut,
