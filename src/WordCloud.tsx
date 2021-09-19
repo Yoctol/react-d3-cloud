@@ -40,6 +40,8 @@ type WordCloudProps = {
   onWordMouseOut?: () => void;
 };
 
+const defaultScaleOrdinal = scaleOrdinal(schemeCategory10);
+
 function WordCloud({
   data,
   width = 700,
@@ -55,7 +57,7 @@ function WordCloud({
   random = Math.random,
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-ignore The ordinal function should accept number
-  fill = (_, i) => scaleOrdinal(schemeCategory10)(i),
+  fill = (_, i) => defaultScaleOrdinal(i),
   onWordClick,
   onWordMouseOver,
   onWordMouseOut,
