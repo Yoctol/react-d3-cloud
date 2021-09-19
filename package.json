@@ -1,6 +1,6 @@
 {
   "name": "react-d3-cloud",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A word cloud component using d3-cloud",
   "license": "MIT",
   "author": "cph",
