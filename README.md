@@ -80,7 +80,7 @@ render(
 );
 ```
 
-Please checkout [demo](https://yoctol.github.io/react-d3-cloud)
+Please checkout [demo](https://codesandbox.io/embed/react-d3-cloud-demo-forked-50wzl)
 
 for more detailed props, please refer to below:
 
