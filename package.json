@@ -90,7 +90,7 @@
     "word-cloud"
   ],
   "exports": {
-    "import": "./esm/index.js",
-    "require": "./index.js"
+    "import": "./lib/esm/index.js",
+    "require": "./lib/index.js"
   }
 }
