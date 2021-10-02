@@ -2,7 +2,7 @@ import React, { useRef } from 'react';
 import ReactFauxDom from 'react-faux-dom';
 import cloud from 'd3-cloud';
 import isDeepEqual from 'react-fast-compare';
-import { ValueFn, select } from 'd3-selection';
+import { BaseType, ValueFn, select } from 'd3-selection';
 import { scaleOrdinal } from 'd3-scale';
 import { schemeCategory10 } from 'd3-scale-chromatic';
 
@@ -35,9 +35,9 @@ type WordCloudProps = {
   padding?: number | ((word: Word, index: number) => number);
   random?: () => number;
   fill?: ValueFn<SVGTextElement, Word, string>;
-  onWordClick?: () => void;
-  onWordMouseOver?: () => void;
-  onWordMouseOut?: () => void;
+  onWordClick?: (this: BaseType, event: any, d: Word) => void;
+  onWordMouseOver?: (this: BaseType, event: any, d: Word) => void;
+  onWordMouseOut?: (this: BaseType, event: any, d: Word) => void;
 };
 
 const defaultScaleOrdinal = scaleOrdinal(schemeCategory10);
