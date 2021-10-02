@@ -66,14 +66,14 @@ render(
     padding={5}
     random={Math.random}
     fill={(d, i) => schemeCategory10ScaleOrdinal(i)}
-    onWordClick={(word) => {
-      console.log(`onWordClick: ${word}`);
+    onWordClick={(event, d) => {
+      console.log(`onWordClick: ${d.text}`);
     }}
-    onWordMouseOver={(word) => {
-      console.log(`onWordMouseOver: ${word}`);
+    onWordMouseOver={(event, d) => {
+      console.log(`onWordMouseOver: ${d.text}`);
     }}
-    onWordMouseOut={(word) => {
-      console.log(`onWordMouseOut: ${word}`);
+    onWordMouseOut={(event, d) => {
+      console.log(`onWordMouseOut: ${d.text}`);
     }}
   />,
   document.getElementById('root')
@@ -100,9 +100,9 @@ for more detailed props, please refer to below:
 | padding         | The padding accessor function, which indicates the numerical padding for each word.                                                                                                                                      | `number \| (d) => number`                                            |          | `1`                                         |
 | random          | The internal random number generator, used for selecting the initial position of each word, and the clockwise/counterclockwise direction of the spiral for each word. This should return a number in the range `[0, 1)`. | `(d) => number`                                                      |          | `Math.random`                               |
 | fill            | The fill accessor function, which indicates the color for each word.                                                                                                                                                     | `(d, i) => string`                                                   |          | `(d, i) => schemeCategory10ScaleOrdinal(i)` |
-| onWordClick     | The function will be called when `click` event is triggered on a word                                                                                                                                                    | `word => {}`                                                         |          | null                                        |
-| onWordMouseOver | The function will be called when `mouseover` event is triggered on a word                                                                                                                                                | `word => {}`                                                         |          | null                                        |
-| onWordMouseOut  | The function will be called when `mouseout` event is triggered on a word                                                                                                                                                 | `word => {}`                                                         |          | null                                        |
+| onWordClick     | The function will be called when `click` event is triggered on a word                                                                                                                                                    | `(event, d) => {}`                                                   |          | null                                        |
+| onWordMouseOver | The function will be called when `mouseover` event is triggered on a word                                                                                                                                                | `(event, d) => {}`                                                   |          | null                                        |
+| onWordMouseOut  | The function will be called when `mouseout` event is triggered on a word                                                                                                                                                 | `(event, d) => {}`                                                   |          | null                                        |
 
 ## FAQ
 
