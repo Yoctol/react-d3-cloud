@@ -11,7 +11,7 @@ interface Datum {
   value: number;
 }
 
-interface Word extends cloud.Word {
+export interface Word extends cloud.Word {
   text: string;
   value: number;
 }
