@@ -1,5 +1,10 @@
 import React from 'react';
-import { fireEvent, render, screen, waitFor } from '@testing-library/react';
+import {
+  RenderResult,
+  fireEvent,
+  render,
+  screen,
+} from '@testing-library/react';
 
 import WordCloud, { Word } from '../WordCloud';
 
@@ -9,10 +14,14 @@ const data = [
   { text: 'Cool', value: 10 },
 ];
 
-it('should render words', async () => {
-  render(<WordCloud data={data} />);
+function renderInStrictMode(ui: React.ReactElement): RenderResult {
+  return render(ui, { wrapper: React.StrictMode });
+}
 
-  await waitFor(() => screen.getByText('Hey'));
+it('should render words', async () => {
+  renderInStrictMode(<WordCloud data={data} />);
+
+  await screen.findByText('Hey');
 
   expect(screen.getByText('Hey')).toBeInTheDocument();
   expect(screen.getByText('Ok')).toBeInTheDocument();
@@ -20,7 +29,7 @@ it('should render words', async () => {
 });
 
 it('should render correct words after re-render', async () => {
-  const { rerender } = render(<WordCloud data={data} />);
+  const { rerender } = renderInStrictMode(<WordCloud data={data} />);
 
   const newData = [
     { text: 'New', value: 1 },
@@ -28,7 +37,7 @@ it('should render correct words after re-render', async () => {
   ];
   rerender(<WordCloud data={newData} />);
 
-  await waitFor(() => screen.getByText('New'));
+  await screen.findByText('New');
 
   expect(screen.queryByText('Hey')).not.toBeInTheDocument();
   expect(screen.queryByText('Ok')).not.toBeInTheDocument();
@@ -41,9 +50,9 @@ it('should render correct words after re-render', async () => {
 it('should render with custom font', async () => {
   const font = 'sans-serif';
 
-  render(<WordCloud data={data} font={font} />);
+  renderInStrictMode(<WordCloud data={data} font={font} />);
 
-  await waitFor(() => screen.getByText('Hey'));
+  await screen.findByText('Hey');
 
   expect(screen.getByText('Hey')).toHaveStyle('font-family: sans-serif');
   expect(screen.getByText('Ok')).toHaveStyle('font-family: sans-serif');
@@ -53,9 +62,9 @@ it('should render with custom font', async () => {
 it('should render with custom fontStyle', async () => {
   const fontStyle = 'bold';
 
-  render(<WordCloud data={data} fontStyle={fontStyle} />);
+  renderInStrictMode(<WordCloud data={data} fontStyle={fontStyle} />);
 
-  await waitFor(() => screen.getByText('Hey'));
+  await screen.findByText('Hey');
 
   expect(screen.getByText('Hey')).toHaveStyle('font-style: bold');
   expect(screen.getByText('Ok')).toHaveStyle('font-style: bold');
@@ -65,9 +74,9 @@ it('should render with custom fontStyle', async () => {
 it('should render with custom fontWeight', async () => {
   const fontWeight = 900;
 
-  render(<WordCloud data={data} fontWeight={fontWeight} />);
+  renderInStrictMode(<WordCloud data={data} fontWeight={fontWeight} />);
 
-  await waitFor(() => screen.getByText('Hey'));
+  await screen.findByText('Hey');
 
   expect(screen.getByText('Hey')).toHaveStyle('font-weight: 900');
   expect(screen.getByText('Ok')).toHaveStyle('font-weight: 900');
@@ -77,9 +86,9 @@ it('should render with custom fontWeight', async () => {
 it('should render with custom fontSize', async () => {
   const fontSize = (d: Word) => d.value * 2;
 
-  render(<WordCloud data={data} fontSize={fontSize} />);
+  renderInStrictMode(<WordCloud data={data} fontSize={fontSize} />);
 
-  await waitFor(() => screen.getByText('Hey'));
+  await screen.findByText('Hey');
 
   expect(screen.getByText('Hey')).toHaveStyle('font-size: 2px');
   expect(screen.getByText('Ok')).toHaveStyle('font-size: 10px');
@@ -89,9 +98,9 @@ it('should render with custom fontSize', async () => {
 it('should render with custom rotate', async () => {
   const rotate = (_: Word, i: number) => (i + 1) * 30;
 
-  render(<WordCloud data={data} rotate={rotate} />);
+  renderInStrictMode(<WordCloud data={data} rotate={rotate} />);
 
-  await waitFor(() => screen.getByText('Hey'));
+  await screen.findByText('Hey');
 
   expect(screen.getByText('Hey')).toHaveAttribute(
     'transform',
@@ -110,9 +119,9 @@ it('should render with custom rotate', async () => {
 it('should render with custom fill', async () => {
   const fill = () => '#000000';
 
-  render(<WordCloud data={data} fill={fill} />);
+  renderInStrictMode(<WordCloud data={data} fill={fill} />);
 
-  await waitFor(() => screen.getByText('Hey'));
+  await screen.findByText('Hey');
 
   expect(screen.getByText('Hey')).toHaveStyle('fill: #000000');
   expect(screen.getByText('Ok')).toHaveStyle('fill: #000000');
@@ -122,9 +131,9 @@ it('should render with custom fill', async () => {
 it('should support click handler', async () => {
   const onWordClick = jest.fn();
 
-  render(<WordCloud data={data} onWordClick={onWordClick} />);
+  renderInStrictMode(<WordCloud data={data} onWordClick={onWordClick} />);
 
-  await waitFor(() => screen.getByText('Hey'));
+  await screen.findByText('Hey');
 
   fireEvent.click(screen.getByText('Hey'));
 
@@ -134,9 +143,11 @@ it('should support click handler', async () => {
 it('should support mouse over handler', async () => {
   const onWordMouseOver = jest.fn();
 
-  render(<WordCloud data={data} onWordMouseOver={onWordMouseOver} />);
+  renderInStrictMode(
+    <WordCloud data={data} onWordMouseOver={onWordMouseOver} />
+  );
 
-  await waitFor(() => screen.getByText('Hey'));
+  await screen.findByText('Hey');
 
   fireEvent.mouseOver(screen.getByText('Hey'));
 
@@ -146,9 +157,9 @@ it('should support mouse over handler', async () => {
 it('should support mouse out handler', async () => {
   const onWordMouseOut = jest.fn();
 
-  render(<WordCloud data={data} onWordMouseOut={onWordMouseOut} />);
+  renderInStrictMode(<WordCloud data={data} onWordMouseOut={onWordMouseOut} />);
 
-  await waitFor(() => screen.getByText('Hey'));
+  await screen.findByText('Hey');
 
   fireEvent.mouseOut(screen.getByText('Hey'));
 
