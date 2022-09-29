@@ -31,8 +31,8 @@
   "types": "lib/index.d.ts",
   "dependencies": {
     "d3-cloud": "^1.2.5",
-    "d3-scale": "^3.3.0",
-    "d3-scale-chromatic": "^2.0.0",
+    "d3-scale": "^4.0.2",
+    "d3-scale-chromatic": "^3.0.0",
     "d3-selection": "^2.0.0",
     "prop-types": "^15.7.2",
     "react-fast-compare": "^3.2.0",
