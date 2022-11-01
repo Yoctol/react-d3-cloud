@@ -1,6 +1,6 @@
 {
   "name": "react-d3-cloud",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "A word cloud component using d3-cloud",
   "license": "MIT",
   "author": "cph",
@@ -8,6 +8,10 @@
   "repository": "Yoctol/react-d3-cloud",
   "bugs": {
     "url": "https://github.com/Yoctol/react-d3-cloud/issues"
+  },
+  "exports": {
+    "import": "./lib/esm/index.js",
+    "require": "./lib/index.js"
   },
   "main": "lib/index.js",
   "scripts": {
@@ -86,9 +90,5 @@
     "d3",
     "react",
     "word-cloud"
-  ],
-  "exports": {
-    "import": "./lib/esm/index.js",
-    "require": "./lib/index.js"
-  }
+  ]
 }
