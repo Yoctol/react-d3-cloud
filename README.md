@@ -112,7 +112,7 @@ To make `<WordCloud />` work with Server-Side Rendering (SSR), you need to avoid
 
 ```js
 {
-  typeof window !== 'undefiend' && <WordCloud data={data} />;
+  typeof window !== 'undefined' && <WordCloud data={data} />;
 }
 ```
 
