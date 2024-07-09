@@ -20,6 +20,7 @@ type WordCloudProps = {
   data: Datum[];
   width?: number;
   height?: number;
+  timeInterval?: number;
   font?: string | ((word: Word, index: number) => string);
   fontStyle?: string | ((word: Word, index: number) => string);
   fontWeight?:
@@ -46,6 +47,7 @@ function WordCloud({
   data,
   width = 700,
   height = 600,
+  timeInterval,
   font = 'serif',
   fontStyle = 'normal',
   fontWeight = 'normal',
@@ -129,6 +131,10 @@ function WordCloud({
         texts.on('mouseout', onWordMouseOut);
       }
     });
+
+  if (timeInterval) {
+    layout.timeInterval(timeInterval);
+  }
 
   layout.start();
 
