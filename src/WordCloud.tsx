@@ -35,6 +35,7 @@ type WordCloudProps = {
   padding?: number | ((word: Word, index: number) => number);
   random?: () => number;
   fill?: ValueFn<SVGTextElement, Word, string>;
+  wordClassNames?: ValueFn<SVGTextElement, Word, string>;
   onWordClick?: (this: BaseType, event: any, d: Word) => void;
   onWordMouseOver?: (this: BaseType, event: any, d: Word) => void;
   onWordMouseOut?: (this: BaseType, event: any, d: Word) => void;
@@ -58,6 +59,7 @@ function WordCloud({
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-ignore The ordinal function should accept number
   fill = (_, i) => defaultScaleOrdinal(i),
+  wordClassNames = () => '',
   onWordClick,
   onWordMouseOver,
   onWordMouseOut,
@@ -115,6 +117,7 @@ function WordCloud({
           ((d) => `${d.size}px`) as ValueFn<SVGTextElement, Word, string>
         )
         .style('fill', fill)
+        .attr('class', (d, i, nodes) => wordClassNames.call(nodes[i], d, i, nodes))
         .attr('text-anchor', 'middle')
         .attr('transform', (d) => `translate(${[d.x, d.y]})rotate(${d.rotate})`)
         .text((d) => d.text);
